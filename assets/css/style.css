@@ -51,7 +51,10 @@ body {
   font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  /* clip (not hidden): hidden turns the page into a scroll container, which
+     stops the platform figure and FAQ copy from sticking while scrolling */
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img { max-width: 100%; display: block; }

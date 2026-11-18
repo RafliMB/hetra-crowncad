@@ -60,6 +60,7 @@ Beberapa instalasi WordPress membuang tag tersebut dari widget HTML. Solusi:
 - **Font** diambil dari Google Fonts: `Fraunces` (serif, 400–600) dan `Plus Jakarta Sans` (400–800). Ikon sudah inline SVG. Kalau tema membuang tag `<link>` font, tambahkan tag itu ke head lewat plugin *Insert Headers and Footers*.
 - **JavaScript** hanya progressive enhancement: menu mobile, tab modul, lightbox galeri, chamber "Lihat seluruh foto", validasi form → WhatsApp, tombol kembali ke atas. Halaman tetap terbaca tanpa JS.
 - **Form kontak** tidak mengirim data ke server; tombol submit membuka WhatsApp dengan pesan yang sudah terisi.
+- **Efek menempel saat scroll**: gambar section Platform dan kolom kiri FAQ memakai `position: sticky` (aktif mulai lebar 1181px). Pembungkus `#cc-b` memakai `overflow-x: clip` — bukan `hidden` — karena `overflow-x: hidden` membuat halaman menjadi scroll container dan mematikan efek sticky. Jangan menggantinya dengan `hidden`.
 - Section partner memakai panel navy penuh (tanpa kelas `sect-dark`) supaya tetap kontras di latar abu muda; di layar sempit teks partner tampil lebih dulu, panel menyusul.
 - Galeri hanya menampilkan **dua baris** foto di halaman (7 di desktop, 6 di tablet, 3 di HP). Tombol **"Lihat seluruh foto"** membuka chamber berisi semua 12 foto; klik thumbnail membuka lightbox di indeks yang sama.
 
