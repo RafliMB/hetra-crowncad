@@ -408,7 +408,7 @@
         "Kebutuhan: " + (needField ? needField.value : "-")
       ];
 
-      var url = "https://wa.me/6283815512745?text=" + encodeURIComponent(lines.join("\n"));
+      var url = "https://wa.me/6281912244660?text=" + encodeURIComponent(lines.join("\n"));
       window.open(url, "_blank", "noopener");
     });
   }
