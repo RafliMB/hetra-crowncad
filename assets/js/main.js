@@ -399,7 +399,7 @@
       if (!validate()) return;
 
       var lines = [
-        "Halo PT Hetra, saya ingin informasi CrownCAD.",
+        "Halo, saya ingin informasi CrownCAD.",
         "",
         "Nama: " + nameField.value.trim(),
         "Perusahaan: " + companyField.value.trim(),
