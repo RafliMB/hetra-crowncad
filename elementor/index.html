@@ -1,0 +1,3042 @@
+<!-- CrownCAD Indonesia / direction B — Elementor HTML widget (self-contained) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   CrownCAD Indonesia — direction B: "Workshop"
+   Warm paper, editorial serif, Hetra navy + red. Service-led composition.
+   ========================================================================== */
+
+#cc-b {
+  --paper: #f7f2e8;
+  --paper-2: #efe7d8;
+  --paper-3: #fcf9f2;
+  --white: #fffdf8;
+  --ink: #171f38;
+  --ink-2: #3a425e;
+  --muted: #6c7286;
+  --muted-2: #8b8f9f;
+  --navy: #252c5c;
+  --navy-2: #1b2145;
+  --navy-3: #131831;
+  --brand: #2f308b;
+  --red: #c6402e;
+  --red-2: #e25543;
+  --green: #2a8a5c;
+  --cream: #fbf7ee;
+  --cream-2: #e9e1cf;
+  --line: rgba(23, 31, 56, 0.16);
+  --line-2: rgba(23, 31, 56, 0.09);
+  --line-strong: rgba(23, 31, 56, 0.34);
+  --line-cream: rgba(247, 242, 232, 0.22);
+  --line-cream-2: rgba(247, 242, 232, 0.12);
+  --r-sm: 2px;
+  --r: 3px;
+  --r-lg: 4px;
+  --wrap: 1240px;
+  --gutter: clamp(20px, 5vw, 56px);
+  --sec: clamp(76px, 9.5vw, 136px);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --serif: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+}
+
+#cc-b *,
+#cc-b *::before,
+#cc-b *::after { box-sizing: border-box; }
+
+#cc-b { scroll-behavior: smooth; scroll-padding-top: 100px; -webkit-text-size-adjust: 100%; }
+
+#cc-b {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#cc-b img { max-width: 100%; display: block; }
+#cc-b a { color: inherit; text-decoration: none; }
+#cc-b button, #cc-b input, #cc-b select, #cc-b textarea { font: inherit; color: inherit; }
+#cc-b button { cursor: pointer; }
+#cc-b h1, #cc-b h2, #cc-b h3, #cc-b h4, #cc-b p, #cc-b figure, #cc-b dl, #cc-b dd, #cc-b ul, #cc-b ol { margin: 0; }
+#cc-b ul, #cc-b ol { padding: 0; list-style: none; }
+#cc-b address { font-style: normal; }
+#cc-b ::selection { background: var(--red); color: var(--cream); }
+
+#cc-b :focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+
+#cc-b .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+#cc-b .i { width: 1em; height: 1em; flex: none; display: inline-block; vertical-align: -0.125em; }
+
+#cc-b .skip {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 200;
+  padding: 10px 16px;
+  background: var(--ink);
+  color: var(--cream);
+  font-size: 13px;
+  transform: translateY(-160%);
+  transition: transform 0.2s;
+}
+#cc-b .skip:focus { transform: none; }
+
+#cc-b .wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+#cc-b .mono {
+  font-family: var(--font);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+#cc-b .kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  font-family: var(--font);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+#cc-b .kicker::before {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background: var(--red);
+  flex: none;
+}
+#cc-b .kicker .mono {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--red);
+}
+
+#cc-b .sect { padding: var(--sec) 0; position: relative; }
+#cc-b .sect-light { background: var(--paper); color: var(--ink); }
+#cc-b .sect-dark { background: var(--navy-2); color: var(--cream); }
+
+#cc-b .sect-head { max-width: 780px; }
+#cc-b .sect-head.wide {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: end;
+  gap: 24px 64px;
+}
+#cc-b .sect-head h2,
+#cc-b .faq-copy h2,
+#cc-b .contact-copy h2,
+#cc-b .partner-copy h2,
+#cc-b .platform-copy h2,
+#cc-b .flow .sect-head h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.05rem, 3.7vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.03;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+#cc-b .sect-head .lead,
+#cc-b .sect-head.wide .lead {
+  margin-top: 20px;
+  max-width: 52ch;
+  font-size: clamp(15px, 1.15vw, 17px);
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+#cc-b .sect-head.wide .lead { margin-top: 0; padding-bottom: 6px; }
+#cc-b .sect-dark .sect-head .lead { color: rgba(247, 242, 232, 0.74); }
+#cc-b .sect-dark .sect-head h2, #cc-b .sect-dark h2 { color: var(--cream); }
+#cc-b .sect-dark .lead { color: rgba(247, 242, 232, 0.74); }
+#cc-b .sect-dark .kicker { color: rgba(247, 242, 232, 0.6); }
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+
+#cc-b .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 14px 24px;
+  border: 1px solid transparent;
+  border-radius: var(--r-sm);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+  transition: transform 0.2s var(--ease), background 0.2s var(--ease),
+              border-color 0.2s var(--ease), color 0.2s var(--ease),
+              box-shadow 0.2s var(--ease);
+}
+#cc-b .btn .i { width: 15px; height: 15px; }
+#cc-b .btn:hover { transform: translateY(-2px); }
+#cc-b .btn:active { transform: translateY(0) scale(0.99); }
+
+#cc-b .btn-primary { background: var(--navy); color: var(--cream); box-shadow: 4px 4px 0 rgba(198, 64, 46, 0.9); }
+#cc-b .btn-primary:hover { background: var(--red); box-shadow: 4px 4px 0 rgba(23, 31, 56, 0.9); }
+#cc-b .btn-light { background: var(--cream); color: var(--ink); border-color: var(--cream); box-shadow: 4px 4px 0 rgba(198, 64, 46, 0.9); }
+#cc-b .btn-light:hover { background: #fff; border-color: #fff; }
+#cc-b .btn-ghost { border-color: var(--line-cream); color: var(--cream); background: transparent; }
+#cc-b .btn-ghost:hover { border-color: var(--cream); background: rgba(247, 242, 232, 0.08); }
+#cc-b .btn-outline { border-color: var(--ink); color: var(--ink); background: transparent; }
+#cc-b .btn-outline:hover { background: var(--ink); color: var(--cream); }
+#cc-b .btn-sm { min-height: 42px; padding: 11px 16px; font-size: 11px; }
+#cc-b .btn-block { width: 100%; }
+
+#cc-b .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  display: inline-block;
+  flex: none;
+}
+#cc-b .pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  flex: none;
+  box-shadow: 0 0 0 0 rgba(198, 64, 46, 0.5);
+  animation: pulse 2.6s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(198, 64, 46, 0.45); }
+  70% { box-shadow: 0 0 0 8px rgba(198, 64, 46, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(198, 64, 46, 0); }
+}
+
+/* --------------------------------------------------------------------------
+   Scroll progress + navigation
+   -------------------------------------------------------------------------- */
+
+#cc-b .scrollbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 120;
+  width: 100%;
+  height: 3px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+#cc-b .nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+#cc-b .nav.is-stuck {
+  background: rgba(247, 242, 232, 0.94);
+  border-bottom-color: var(--line);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+#cc-b .nav-inner {
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+#cc-b .brand { display: inline-flex; align-items: center; gap: 14px; flex: none; }
+#cc-b .brand img { width: auto; height: 26px; }
+#cc-b .brand-sep { width: 1px; height: 30px; background: var(--line-strong); }
+#cc-b .brand-by {
+  font-size: 8px;
+  line-height: 1.55;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+#cc-b .brand-by strong { font-size: 8px; font-weight: 700; color: var(--ink); letter-spacing: 0.1em; }
+
+#cc-b .nav-links { display: flex; align-items: center; gap: 26px; }
+#cc-b .nav-links a {
+  position: relative;
+  padding: 6px 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+#cc-b .nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.25s var(--ease);
+}
+#cc-b .nav-links a:hover { color: var(--ink); }
+#cc-b .nav-links a:hover::after { transform: scaleX(1); }
+
+#cc-b .nav-actions { display: flex; align-items: center; gap: 18px; }
+#cc-b .nav-phone { font-size: 12px; font-weight: 700; letter-spacing: 0.02em; color: var(--ink-2); }
+#cc-b .nav-phone:hover { color: var(--red); }
+
+#cc-b .menu-btn {
+  display: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
+  background: transparent;
+  color: var(--ink);
+}
+#cc-b .menu-btn .i { width: 20px; height: 20px; }
+
+/* Mobile menu */
+#cc-b .mobile-menu {
+  position: fixed;
+  inset: 0 0 0 auto;
+  z-index: 110;
+  width: min(430px, 100%);
+  background: var(--navy-3);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  padding: 22px 26px 30px;
+  transform: translateX(101%);
+  visibility: hidden;
+  transition: transform 0.35s var(--ease), visibility 0.35s;
+  overflow-y: auto;
+}
+#cc-b .mobile-menu.is-open { transform: none; visibility: visible; }
+#cc-b .mobile-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid var(--line-cream); }
+#cc-b .mobile-head .brand img { height: 24px; }
+#cc-b .mobile-head .menu-btn { border-color: var(--line-cream); color: var(--cream); }
+#cc-b .mobile-links { display: flex; flex-direction: column; padding: 14px 0 24px; }
+#cc-b .mobile-links a {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line-cream-2);
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+#cc-b .mobile-links a span {
+  font-family: var(--font);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--red-2);
+}
+#cc-b .mobile-links a:hover { color: #fff; padding-left: 4px; }
+#cc-b .mobile-foot { margin-top: auto; display: grid; gap: 10px; }
+#cc-b .mobile-foot .btn { width: 100%; }
+#cc-b .mobile-foot .btn-primary { background: var(--red); color: var(--cream); box-shadow: none; }
+#cc-b .mobile-foot .btn-primary:hover { background: var(--red-2); box-shadow: none; }
+#cc-b .mobile-foot .btn-outline { border-color: var(--line-cream); color: var(--cream); }
+#cc-b .mobile-foot .btn-outline:hover { background: var(--cream); color: var(--ink); }
+#cc-b .mobile-foot p {
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 1.7;
+  color: rgba(247, 242, 232, 0.6);
+}
+
+
+
+/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+
+#cc-b .hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100svh;
+  padding: 112px 0 72px;
+  background: var(--paper);
+  overflow: clip;
+}
+
+/* Background: CrownCAD render under a warm paper veil */
+#cc-b .hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: clip;
+}
+#cc-b .hero-bg > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 100% 50%;
+  filter: saturate(0.85) contrast(0.98);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 66%, rgba(0, 0, 0, 0.4) 90%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 66%, rgba(0, 0, 0, 0.4) 90%, transparent 100%);
+}
+#cc-b .hero-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(247, 242, 232, 0.93) 0%, rgba(247, 242, 232, 0.87) 38%, rgba(247, 242, 232, 0.76) 68%, rgba(247, 242, 232, 0.64) 100%);
+}
+#cc-b .hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(23, 31, 56, 0.045) 1px, transparent 1px) 0 0 / 100% 98px;
+}
+
+#cc-b .hero-inner {
+  position: relative;
+  z-index: 2;
+}
+#cc-b .hero-tag {
+  position: absolute;
+  top: -2px;
+  right: var(--gutter);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+#cc-b .hero-copy { max-width: 650px; }
+#cc-b .hero-copy > * { animation: enter 0.85s var(--ease) both; }
+#cc-b .hero-copy > :nth-child(1) { animation-delay: 0.05s; }
+#cc-b .hero-copy > :nth-child(2) { animation-delay: 0.12s; }
+#cc-b .hero-copy > :nth-child(3) { animation-delay: 0.22s; }
+#cc-b .hero-copy > :nth-child(4) { animation-delay: 0.3s; }
+@keyframes enter {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+#cc-b .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 26px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+#cc-b .hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.65rem, 4.55vw, 4.3rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  max-width: 13ch;
+  color: var(--ink);
+  text-wrap: balance;
+}
+#cc-b .hero-accent {
+  color: var(--red);
+  font-style: italic;
+  font-weight: 400;
+}
+#cc-b .hero-sub {
+  margin-top: 26px;
+  max-width: 44ch;
+  font-size: clamp(0.975rem, 1.1vw, 1.0625rem);
+  line-height: 1.75;
+  color: var(--ink-2);
+}
+#cc-b .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+#cc-b .hero-actions .btn-ghost { border-color: var(--ink); color: var(--ink); }
+#cc-b .hero-actions .btn-ghost:hover { background: var(--ink); color: var(--cream); }
+
+#cc-b .hero-aside {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 48px;
+  animation: enter 0.9s var(--ease) both;
+  animation-delay: 0.34s;
+}
+
+#cc-b .hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  max-width: 560px;
+  border-top: 1px solid var(--line-strong);
+}
+#cc-b .hero-facts li {
+  padding: 16px 28px 0 0;
+  margin-right: 28px;
+  border-right: 1px solid var(--line);
+}
+#cc-b .hero-facts li:last-child { border-right: 0; margin-right: 0; padding-right: 0; }
+#cc-b .hero-facts strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+#cc-b .hero-facts span {
+  display: block;
+  margin-top: 2px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+#cc-b .seal {
+  margin-top: 24px;
+  border-left: 3px solid var(--red);
+  background: var(--paper-3);
+  padding: 16px 20px;
+}
+#cc-b .hero-aside .seal { flex: none; width: min(430px, 100%); margin-top: 0; }
+#cc-b .seal-logos { display: flex; align-items: center; gap: 14px; }
+#cc-b .seal-logos img:first-child { height: 20px; width: auto; }
+#cc-b .seal-logos img:last-child { height: 28px; width: auto; }
+#cc-b .seal-logos span { width: 1px; height: 24px; background: var(--line-strong); }
+#cc-b .seal p {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   Stats
+   -------------------------------------------------------------------------- */
+
+#cc-b .stats {
+  background: var(--paper-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+#cc-b .stats-inner { padding-top: 34px; padding-bottom: 38px; }
+#cc-b .stats-label {
+  color: var(--muted);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  margin-bottom: 24px;
+}
+#cc-b .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+}
+#cc-b .stats-grid > div {
+  padding: 0 26px;
+  border-left: 1px solid var(--line);
+}
+#cc-b .stats-grid > div:first-child { padding-left: 0; border-left: 0; }
+#cc-b .stats-grid dt {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+#cc-b .stats-grid dd {
+  margin: 6px 0 0;
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3.1vw, 2.9rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+#cc-b .stats-grid dd span { color: var(--red); }
+
+/* --------------------------------------------------------------------------
+   Industries
+   -------------------------------------------------------------------------- */
+
+#cc-b .industries .sect-head { margin-bottom: clamp(40px, 5vw, 64px); }
+#cc-b .industry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(36px, 4.5vw, 62px) clamp(28px, 4vw, 56px);
+}
+#cc-b .industry {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-top: 1px solid var(--line-strong);
+  padding-top: 18px;
+}
+#cc-b .industry-media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: var(--paper-2);
+  margin-bottom: 22px;
+}
+#cc-b .industry-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.88) contrast(1.03);
+  transition: transform 0.8s var(--ease), filter 0.5s var(--ease);
+}
+#cc-b .industry:hover .industry-media img { transform: scale(1.04); filter: saturate(1) contrast(1.02); }
+#cc-b .media-index {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  background: var(--paper);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--red);
+}
+#cc-b .industry-body h3 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.2vw, 1.95rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+#cc-b .industry-body > p {
+  margin-top: 10px;
+  max-width: 46ch;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+#cc-b .industry-body .ticks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 20px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-2);
+}
+#cc-b .ticks li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ink-2);
+}
+#cc-b .ticks .i { width: 12px; height: 12px; color: var(--red); flex: none; }
+
+/* --------------------------------------------------------------------------
+   Platform
+   -------------------------------------------------------------------------- */
+
+#cc-b .platform { background: var(--navy-2); color: var(--cream); }
+#cc-b .platform-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  gap: clamp(40px, 5vw, 76px);
+  align-items: start;
+}
+#cc-b .platform-copy h2 { max-width: 13ch; color: var(--cream); }
+#cc-b .platform-copy .lead {
+  margin-top: 20px;
+  max-width: 48ch;
+  color: rgba(247, 242, 232, 0.74);
+  font-size: clamp(15px, 1.15vw, 17px);
+}
+#cc-b .feature-list { margin-top: 34px; }
+#cc-b .feature-list li {
+  display: flex;
+  gap: 16px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line-cream-2);
+}
+#cc-b .feature-list li:last-child { border-bottom: 1px solid var(--line-cream-2); }
+#cc-b .feature-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  border: 1px solid var(--line-cream);
+  color: var(--red-2);
+}
+#cc-b .feature-icon .i { width: 18px; height: 18px; }
+#cc-b .feature-list h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+}
+#cc-b .feature-list p {
+  margin-top: 3px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: rgba(247, 242, 232, 0.66);
+}
+#cc-b .chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+#cc-b .chips span {
+  padding: 7px 12px;
+  border: 1px solid var(--line-cream);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(247, 242, 232, 0.8);
+}
+
+#cc-b .platform-figure { margin: 0; position: sticky; top: 108px; }
+#cc-b .figure-frame {
+  position: relative;
+  padding: 14px;
+  background: var(--cream);
+  border: 1px solid var(--line-cream);
+  box-shadow: 16px 16px 0 rgba(198, 64, 46, 0.18);
+}
+#cc-b .figure-frame img { width: 100%; height: auto; }
+#cc-b .figure-tag {
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  padding: 6px 10px;
+  background: var(--ink);
+  color: var(--cream);
+  font-size: 8.5px;
+  letter-spacing: 0.14em;
+}
+#cc-b .platform-figure figcaption {
+  margin-top: 18px;
+  max-width: 46ch;
+  font-size: 11.5px;
+  line-height: 1.7;
+  color: rgba(247, 242, 232, 0.55);
+}
+
+/* --------------------------------------------------------------------------
+   Statement
+   -------------------------------------------------------------------------- */
+
+#cc-b .statement {
+  position: relative;
+  background: var(--paper-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: clamp(64px, 9vw, 118px) 0;
+  overflow: hidden;
+}
+#cc-b .statement-inner { position: relative; }
+#cc-b .statement-kicker {
+  color: var(--red);
+  margin-bottom: 20px;
+  font-size: 10px;
+}
+#cc-b .statement-line {
+  max-width: 18ch;
+  font-family: var(--serif);
+  font-size: clamp(2.3rem, 5.4vw, 4.6rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+#cc-b .statement-sub {
+  margin-top: 22px;
+  max-width: 46ch;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+#cc-b .statement::after {
+  content: "\201C";
+  position: absolute;
+  right: var(--gutter);
+  bottom: -0.28em;
+  font-family: var(--serif);
+  font-size: clamp(180px, 26vw, 380px);
+  line-height: 1;
+  color: rgba(198, 64, 46, 0.12);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Modules
+   -------------------------------------------------------------------------- */
+
+#cc-b .modules { background: var(--paper); }
+#cc-b .modules .sect-head { margin-bottom: 38px; }
+#cc-b .tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 34px;
+  border-bottom: 1px solid var(--line);
+}
+#cc-b .tab {
+  position: relative;
+  padding: 14px 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.2s, border-color 0.2s;
+}
+#cc-b .tab .mono { font-family: var(--serif); font-size: 12px; font-weight: 500; letter-spacing: 0; color: var(--muted-2); }
+#cc-b .tab:hover { color: var(--ink); }
+#cc-b .tab.is-active { color: var(--ink); border-bottom-color: var(--red); }
+#cc-b .tab.is-active .mono { color: var(--red); }
+
+#cc-b .panel { margin-top: 38px; }
+#cc-b .panel[hidden] { display: none; }
+#cc-b .panel:focus-visible { outline-offset: 6px; }
+#cc-b .module-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+#cc-b .module-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#cc-b .module {
+  display: flex;
+  flex-direction: column;
+  background: var(--paper-3);
+  border: 1px solid var(--line);
+  transition: border-color 0.25s, transform 0.25s var(--ease);
+}
+#cc-b .module:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+#cc-b .module figure {
+  position: relative;
+  aspect-ratio: 16 / 9.2;
+  padding: 16px;
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+#cc-b .module figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 0.5s var(--ease);
+}
+#cc-b .module:hover figure img { transform: scale(1.02); }
+#cc-b .module-index {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 3px 7px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  font-family: var(--serif);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--red);
+}
+#cc-b .module-body { padding: 22px 24px 26px; }
+#cc-b .module-body h3 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+#cc-b .module-body p {
+  margin-top: 8px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+
+/* --------------------------------------------------------------------------
+   Flow
+   -------------------------------------------------------------------------- */
+
+#cc-b .flow { background: var(--navy-3); color: var(--cream); }
+#cc-b .flow .sect-head { max-width: 820px; }
+#cc-b .flow .sect-head h2 { color: var(--cream); }
+#cc-b .flow .sect-head .lead { color: rgba(247, 242, 232, 0.72); margin-top: 20px; }
+#cc-b .flow-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: clamp(40px, 5vw, 64px);
+}
+#cc-b .step { border-top: 1px solid var(--line-cream); padding-top: 16px; }
+#cc-b .step-num {
+  display: block;
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--red-2);
+  margin-bottom: 14px;
+}
+#cc-b .step h3 {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--cream);
+}
+#cc-b .step p {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(247, 242, 232, 0.62);
+}
+#cc-b .flow-figure {
+  position: relative;
+  margin-top: clamp(44px, 6vw, 72px);
+  padding: 22px;
+  background: var(--cream);
+  border: 1px solid var(--line-cream);
+  box-shadow: 18px 18px 0 rgba(198, 64, 46, 0.16);
+}
+#cc-b .flow-figure img {
+  width: 100%;
+  height: clamp(280px, 40vw, 500px);
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+#cc-b .flow-callouts {
+  position: absolute;
+  inset: 22px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  pointer-events: none;
+}
+#cc-b .flow-callouts span {
+  padding: 6px 10px;
+  background: var(--ink);
+  color: var(--cream);
+  font-size: 8.5px;
+  letter-spacing: 0.14em;
+}
+#cc-b .flow-callouts span:last-child { background: var(--red); }
+
+/* --------------------------------------------------------------------------
+   Support
+   -------------------------------------------------------------------------- */
+
+#cc-b .support { background: var(--paper); }
+#cc-b .support .sect-head { margin-bottom: clamp(36px, 4vw, 52px); }
+#cc-b .support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 clamp(28px, 4vw, 54px);
+}
+#cc-b .support-card {
+  padding: 24px 0 30px;
+  border-top: 1px solid var(--line-strong);
+  transition: border-color 0.25s;
+}
+#cc-b .support-card:hover { border-top-color: var(--red); }
+#cc-b .support-num {
+  display: block;
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--red);
+  margin-bottom: 14px;
+}
+#cc-b .support-card h3 {
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+#cc-b .support-card p {
+  margin-top: 9px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+#cc-b .sla-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr) auto;
+  gap: 28px 40px;
+  align-items: center;
+  margin-top: clamp(42px, 5vw, 64px);
+  padding: clamp(26px, 3.4vw, 40px);
+  background: var(--navy-2);
+  color: var(--cream);
+  border-left: 4px solid var(--red);
+}
+#cc-b .sla-bar h3 {
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+#cc-b .sla-bar p { margin-top: 6px; font-size: 12.5px; color: rgba(247, 242, 232, 0.64); }
+#cc-b .sla-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 18px;
+}
+#cc-b .sla-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(247, 242, 232, 0.8);
+}
+#cc-b .sla-list span { width: 5px; height: 5px; background: var(--red-2); border-radius: 50%; flex: none; }
+#cc-b .sla-bar .btn-primary { background: var(--red); color: var(--cream); box-shadow: none; white-space: nowrap; }
+#cc-b .sla-bar .btn-primary:hover { background: var(--red-2); }
+
+/* --------------------------------------------------------------------------
+   Trainers
+   -------------------------------------------------------------------------- */
+
+#cc-b .trainers { background: var(--navy-2); color: var(--cream); }
+#cc-b .trainers .sect-head { margin-bottom: clamp(36px, 4vw, 52px); }
+#cc-b .trainer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 26px;
+}
+#cc-b .trainer { border-top: 1px solid var(--line-cream); padding-top: 14px; }
+#cc-b .trainer img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 3.8;
+  object-fit: cover;
+  object-position: 50% 16%;
+  background: var(--cream);
+  filter: grayscale(1) contrast(1.04);
+  transition: filter 0.45s var(--ease), transform 0.45s var(--ease);
+}
+#cc-b .trainer:hover img { filter: grayscale(0) contrast(1.02); transform: translateY(-3px); }
+#cc-b .trainer figcaption { padding-top: 14px; }
+#cc-b .trainer strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--cream);
+}
+#cc-b .trainer span {
+  display: block;
+  margin-top: 3px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--red-2);
+}
+#cc-b .trainer-note {
+  margin-top: 28px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: rgba(247, 242, 232, 0.55);
+}
+#cc-b .trainer-note a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 8px;
+  color: var(--cream);
+  border-bottom: 1px solid var(--red-2);
+  padding-bottom: 1px;
+}
+#cc-b .trainer-note a:hover { color: var(--red-2); }
+
+/* --------------------------------------------------------------------------
+   Gallery
+   -------------------------------------------------------------------------- */
+
+#cc-b .gallery { background: var(--paper); }
+#cc-b .gallery .sect-head { margin-bottom: clamp(34px, 4vw, 50px); }
+#cc-b .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  grid-auto-rows: clamp(140px, 15vw, 210px);
+}
+#cc-b .gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: var(--paper-2);
+  overflow: hidden;
+  cursor: zoom-in;
+}
+#cc-b .gallery-item.span-2 { grid-column: span 2; }
+#cc-b .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.86) contrast(1.02);
+  transition: transform 0.7s var(--ease), filter 0.4s;
+}
+#cc-b .gallery-item:hover img { transform: scale(1.045); filter: saturate(1) contrast(1.02); }
+#cc-b .gallery-hint {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  background: var(--paper);
+  color: var(--ink);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+#cc-b .gallery-hint .i { width: 14px; height: 14px; }
+#cc-b .gallery-item:hover .gallery-hint,
+#cc-b .gallery-item:focus-visible .gallery-hint { opacity: 1; transform: none; }
+
+/* --------------------------------------------------------------------------
+   Partner
+   -------------------------------------------------------------------------- */
+
+#cc-b .partner { background: var(--paper-2); border-top: 1px solid var(--line); }
+#cc-b .partner-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(40px, 5vw, 76px);
+  align-items: start;
+}
+#cc-b .partner-panel {
+  position: relative;
+  padding: clamp(24px, 3vw, 38px);
+  background: var(--navy-2);
+  color: var(--cream);
+  border-left: 4px solid var(--red);
+  box-shadow: 16px 16px 0 rgba(198, 64, 46, 0.12);
+}
+#cc-b .partner-logos { display: flex; align-items: center; gap: 14px; }
+#cc-b .partner-logos img:first-child { height: 21px; width: auto; }
+#cc-b .partner-logos img:last-child { height: 30px; width: auto; }
+#cc-b .partner-logos span { width: 1px; height: 26px; background: var(--line-cream); }
+#cc-b .partner-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(247, 242, 232, 0.62);
+}
+#cc-b .partner-tag .dot { background: var(--red-2); }
+#cc-b .partner-line {
+  margin-top: 16px;
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2.2vw, 1.9rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+#cc-b .partner-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 24px;
+  border-top: 1px solid var(--line-cream);
+}
+#cc-b .partner-facts > div {
+  padding: 13px 12px 13px 0;
+  border-bottom: 1px solid var(--line-cream-2);
+}
+#cc-b .partner-facts > div:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--line-cream-2); }
+#cc-b .partner-facts strong {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+}
+#cc-b .partner-facts span {
+  display: block;
+  margin-top: 2px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(247, 242, 232, 0.48);
+}
+#cc-b .partner-foot { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line-cream); }
+#cc-b .partner-foot .mono { color: var(--red-2); font-size: 8.5px; }
+#cc-b .partner-foot p:last-child { margin-top: 6px; font-size: 11.5px; line-height: 1.6; color: rgba(247, 242, 232, 0.6); }
+
+#cc-b .partner-copy .kicker { margin-bottom: 20px; }
+#cc-b .partner-copy .lead {
+  margin-top: 18px;
+  max-width: 50ch;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--ink-2);
+}
+#cc-b .story-list { margin-top: 28px; }
+#cc-b .story-list li {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 16px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+#cc-b .story-list li:last-child { border-bottom: 1px solid var(--line); }
+#cc-b .story-list > li > .mono {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--red);
+}
+#cc-b .story-list h3 {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+#cc-b .story-list p { margin-top: 5px; font-size: 13px; line-height: 1.7; color: var(--ink-2); }
+
+/* --------------------------------------------------------------------------
+   FAQ
+   -------------------------------------------------------------------------- */
+
+#cc-b .faq { background: var(--paper); }
+#cc-b .faq-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(36px, 5vw, 72px);
+  align-items: start;
+}
+#cc-b .faq-copy { position: sticky; top: 110px; }
+#cc-b .faq-copy .lead { margin-top: 20px; max-width: 36ch; font-size: 14.5px; color: var(--ink-2); }
+#cc-b .faq-copy .btn { margin-top: 26px; }
+#cc-b .faq-list { border-top: 1px solid var(--line-strong); }
+#cc-b .faq-item { border-bottom: 1px solid var(--line); }
+#cc-b .faq-item summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 0;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  cursor: pointer;
+  list-style: none;
+}
+#cc-b .faq-item summary::-webkit-details-marker { display: none; }
+#cc-b .faq-item summary:hover { color: var(--red); }
+#cc-b .faq-icon {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  flex: none;
+  margin-top: 4px;
+}
+#cc-b .faq-icon::before,
+#cc-b .faq-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--red);
+  transition: transform 0.25s var(--ease);
+}
+#cc-b .faq-icon::after { transform: rotate(90deg); }
+#cc-b .faq-item[open] .faq-icon::after { transform: rotate(0); }
+#cc-b .faq-answer {
+  padding: 0 40px 22px 0;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--ink-2);
+}
+
+/* --------------------------------------------------------------------------
+   CTA
+   -------------------------------------------------------------------------- */
+
+#cc-b .cta {
+  position: relative;
+  background: var(--navy-3);
+  color: var(--cream);
+  padding: clamp(72px, 9vw, 124px) 0;
+  overflow: hidden;
+}
+#cc-b .cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 300px at 82% 20%, rgba(198, 64, 46, 0.22), transparent 70%),
+    linear-gradient(rgba(247, 242, 232, 0.05) 1px, transparent 1px) 0 0 / 100% 92px;
+  pointer-events: none;
+}
+#cc-b .cta-inner { position: relative; max-width: 820px; }
+#cc-b .cta .kicker { color: rgba(247, 242, 232, 0.6); }
+#cc-b .cta h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.3rem, 5vw, 4.1rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  color: var(--cream);
+  max-width: 16ch;
+  text-wrap: balance;
+}
+#cc-b .cta .lead { margin-top: 20px; max-width: 44ch; font-size: 15.5px; color: rgba(247, 242, 232, 0.72); }
+#cc-b .cta-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+#cc-b .cta-chips { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 32px; }
+#cc-b .cta-chips li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(247, 242, 232, 0.66);
+}
+#cc-b .cta-chips .i { width: 13px; height: 13px; color: var(--red-2); }
+
+/* --------------------------------------------------------------------------
+   Contact
+   -------------------------------------------------------------------------- */
+
+#cc-b .contact { background: var(--paper); }
+#cc-b .contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+  gap: clamp(36px, 5vw, 72px);
+  align-items: start;
+}
+#cc-b .contact-copy h2 { max-width: 13ch; }
+#cc-b .contact-copy .lead { margin-top: 20px; max-width: 46ch; font-size: 15px; color: var(--ink-2); }
+#cc-b .contact-details { margin-top: 34px; border-top: 1px solid var(--line-strong); }
+#cc-b .contact-details > div {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+#cc-b .contact-details dt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+#cc-b .contact-details dt .i { width: 13px; height: 13px; color: var(--red); }
+#cc-b .contact-details dd { font-size: 13.5px; line-height: 1.65; color: var(--ink); }
+#cc-b .contact-details a:hover { color: var(--red); text-decoration: underline; text-underline-offset: 3px; }
+#cc-b .sep { margin: 0 6px; color: var(--muted-2); }
+#cc-b .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+#cc-b .contact-card {
+  background: var(--paper-3);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--red);
+  padding: clamp(24px, 3.2vw, 38px);
+  box-shadow: 12px 12px 0 rgba(23, 31, 56, 0.06);
+}
+#cc-b .contact-card h3 {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+#cc-b .contact-card > p { margin-top: 8px; font-size: 12.5px; line-height: 1.65; color: var(--muted); }
+#cc-b .field { margin-top: 16px; }
+#cc-b .field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+#cc-b .field input,
+#cc-b .field select {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 13.5px;
+  transition: border-color 0.2s, background 0.2s;
+}
+#cc-b .field input::placeholder { color: var(--muted-2); }
+#cc-b .field input:focus,
+#cc-b .field select:focus { outline: none; border-color: var(--ink); background: #fff; }
+#cc-b .field input.is-invalid { border-color: var(--red); background: rgba(198, 64, 46, 0.05); }
+#cc-b .field-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+#cc-b .form-error { margin-top: 14px; font-size: 11.5px; color: var(--red); }
+#cc-b .form-note { margin-top: 10px; font-size: 10px; letter-spacing: 0.02em; color: var(--muted-2); text-align: center; }
+#cc-b .contact-card .btn { margin-top: 20px; box-shadow: none; }
+#cc-b .contact-card .btn:hover { background: var(--red); }
+
+#cc-b .map { margin-top: clamp(44px, 5vw, 64px); border: 1px solid var(--line); background: var(--paper-3); }
+#cc-b .map-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--line);
+}
+#cc-b .map-head .mono { font-size: 9px; color: var(--muted); }
+#cc-b .map-head a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--red);
+}
+#cc-b .map-head .i { width: 13px; height: 13px; }
+#cc-b .map-frame { position: relative; height: clamp(280px, 38vw, 420px); background: var(--paper-2); }
+#cc-b .map-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+#cc-b .map-cover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 16px 16px 22px;
+  border: 0;
+  background: linear-gradient(180deg, rgba(19, 24, 49, 0) 35%, rgba(19, 24, 49, 0.55) 72%, rgba(19, 24, 49, 0.88));
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+#cc-b .map-frame.is-active .map-cover { display: none; }
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+#cc-b .footer { background: var(--navy-3); color: rgba(247, 242, 232, 0.72); }
+#cc-b .footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 0.7fr));
+  gap: clamp(30px, 4vw, 56px);
+  padding-top: clamp(54px, 6vw, 76px);
+  padding-bottom: clamp(38px, 4vw, 54px);
+}
+#cc-b .footer-logos { display: flex; align-items: center; gap: 16px; }
+#cc-b .footer-logos img:first-child { height: 24px; width: auto; }
+#cc-b .footer-logos img:last-child { height: 32px; width: auto; }
+#cc-b .footer-logos span { width: 1px; height: 28px; background: var(--line-cream); }
+#cc-b .footer-brand > p {
+  margin-top: 18px;
+  max-width: 42ch;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: rgba(247, 242, 232, 0.6);
+}
+#cc-b .footer-brand address {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-cream-2);
+  font-size: 12px;
+  line-height: 1.8;
+  color: rgba(247, 242, 232, 0.62);
+}
+#cc-b .footer-brand address a { color: var(--cream); }
+#cc-b .footer-brand address a:hover { color: var(--red-2); }
+#cc-b .footer-col h4 {
+  margin-bottom: 16px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red-2);
+}
+#cc-b .footer-col li + li { margin-top: 9px; }
+#cc-b .footer-col a { font-size: 12.5px; color: rgba(247, 242, 232, 0.68); }
+#cc-b .footer-col a:hover { color: var(--cream); text-decoration: underline; text-underline-offset: 3px; }
+#cc-b .footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px 32px;
+  padding-top: 20px;
+  padding-bottom: 26px;
+  border-top: 1px solid var(--line-cream-2);
+  font-size: 10.5px;
+  letter-spacing: 0.02em;
+  color: rgba(247, 242, 232, 0.42);
+}
+
+/* --------------------------------------------------------------------------
+   Floating actions
+   -------------------------------------------------------------------------- */
+
+#cc-b .wa-float {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  height: 46px;
+  background: var(--navy);
+  color: var(--cream);
+  border-radius: 999px;
+  box-shadow: 0 12px 30px -14px rgba(0, 0, 0, 0.5);
+  transition: background 0.25s, transform 0.25s;
+}
+#cc-b .wa-float:hover { background: var(--red); transform: translateY(-2px); }
+#cc-b .wa-icon { display: grid; place-items: center; width: 46px; height: 46px; }
+#cc-b .wa-icon .i { width: 22px; height: 22px; }
+#cc-b .wa-text {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: max-width 0.35s var(--ease), opacity 0.25s, padding 0.35s;
+}
+#cc-b .wa-float:hover .wa-text,
+#cc-b .wa-float:focus-visible .wa-text { max-width: 180px; opacity: 1; padding-right: 20px; }
+
+#cc-b .to-top {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
+  background: var(--paper-3);
+  color: var(--ink);
+  box-shadow: 4px 4px 0 rgba(23, 31, 56, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+}
+#cc-b .to-top .i { width: 17px; height: 17px; transform: rotate(180deg); }
+#cc-b .to-top.is-visible { opacity: 1; visibility: visible; transform: none; }
+#cc-b .to-top:hover { background: var(--red); color: var(--cream); border-color: var(--red); }
+
+/* --------------------------------------------------------------------------
+   Lightbox
+   -------------------------------------------------------------------------- */
+
+#cc-b .lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) 64px;
+  align-items: center;
+  padding: 34px;
+  background: rgba(19, 24, 49, 0.96);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+#cc-b .lightbox[hidden] { display: none; }
+#cc-b .lightbox figure { margin: 0; display: grid; justify-items: center; gap: 14px; min-width: 0; }
+#cc-b .lightbox img {
+  max-width: 100%;
+  max-height: 78vh;
+  width: auto;
+  object-fit: contain;
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.8);
+}
+#cc-b .lightbox figcaption { color: rgba(247, 242, 232, 0.6); font-size: 10px; letter-spacing: 0.16em; }
+#cc-b .lb-close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line-cream);
+  background: transparent;
+  color: var(--cream);
+}
+#cc-b .lb-close:hover { background: var(--red); border-color: var(--red); }
+#cc-b .lb-close .i { width: 18px; height: 18px; }
+#cc-b .lb-nav {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--line-cream);
+  background: transparent;
+  color: var(--cream);
+  justify-self: center;
+}
+#cc-b .lb-nav:hover { background: var(--cream); color: var(--ink); }
+#cc-b .lb-nav .i { width: 18px; height: 18px; }
+#cc-b .lb-prev { justify-self: start; }
+#cc-b .lb-next { justify-self: end; }
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1180px) {
+  #cc-b .nav-links { display: none; }
+  #cc-b .menu-btn { display: grid; }
+  #cc-b .nav-phone { display: none; }
+  #cc-b .brand-by { display: none; }
+  #cc-b .brand-sep { display: none; }
+
+  #cc-b .platform-grid, #cc-b .partner-grid { grid-template-columns: minmax(0, 1fr); }
+  #cc-b .platform-figure { position: static; max-width: 720px; }
+  #cc-b .partner-grid { gap: 48px; }
+  #cc-b .partner-panel { max-width: 560px; }
+  #cc-b .faq-copy { position: static; }
+  #cc-b .sla-bar { grid-template-columns: minmax(0, 1fr); }
+  #cc-b .sla-bar .btn-primary { justify-self: start; }
+}
+
+@media (max-width: 1120px) {
+  #cc-b .hero { display: block; min-height: 0; padding: 112px 0 64px; }
+  #cc-b .hero-aside { flex-direction: column; align-items: stretch; gap: 26px; margin-top: 40px; }
+  #cc-b .hero-aside .seal { width: 100%; max-width: 430px; }
+}
+
+@media (max-width: 980px) {
+  #cc-b .sect-head.wide { grid-template-columns: minmax(0, 1fr); align-items: start; gap: 18px; }
+  #cc-b .sect-head.wide .lead { margin-top: 0; }
+
+  #cc-b .hero-veil {
+    background:
+      linear-gradient(180deg, rgba(247, 242, 232, 0.97) 0%, rgba(247, 242, 232, 0.95) 46%, rgba(247, 242, 232, 0.93) 74%, rgba(247, 242, 232, 0.98) 100%);
+  }
+  #cc-b .hero-bg > img { object-position: 72% 32%; }
+
+  #cc-b .industry-grid { gap: 36px 28px; }
+  #cc-b .module-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #cc-b .support-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #cc-b .trainer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 22px; }
+  #cc-b .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: clamp(130px, 19vw, 190px); }
+  #cc-b .contact-grid { grid-template-columns: minmax(0, 1fr); }
+  #cc-b .contact-card { max-width: 620px; }
+  #cc-b .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #cc-b .footer-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 720px) {
+  #cc-b { --gutter: 20px; }
+  #cc-b { scroll-padding-top: 84px; }
+
+  #cc-b .nav-inner { height: 72px; }
+  #cc-b .brand img { height: 22px; }
+  #cc-b .nav-actions .btn { display: none; }
+  #cc-b .menu-btn { width: 42px; height: 42px; }
+
+  #cc-b .hero { padding: 104px 0 56px; min-height: 0; }
+  #cc-b .hero h1 { font-size: clamp(2.5rem, 10.5vw, 3.4rem); }
+  #cc-b .hero-sub { margin-top: 20px; }
+  #cc-b .hero-actions { margin-top: 26px; }
+  #cc-b .hero-actions .btn { width: 100%; }
+  #cc-b .hero-tag { display: none; }
+  #cc-b .hero-facts { margin-top: 0; }
+  #cc-b .hero-facts li { padding: 12px 14px 0 0; margin-right: 14px; }
+  #cc-b .hero-facts strong { font-size: 21px; }
+  #cc-b .hero-facts span { font-size: 8px; }
+  #cc-b .hero-aside { margin-top: 32px; }
+
+  #cc-b .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 0; }
+  #cc-b .stats-grid > div { padding: 0 0 0 18px; }
+  #cc-b .stats-grid > div:nth-child(odd) { border-left: 0; padding-left: 0; }
+  #cc-b .stats-grid dd { font-size: 2rem; }
+
+  #cc-b .sect-head h2, #cc-b .faq-copy h2, #cc-b .contact-copy h2, #cc-b .partner-copy h2, #cc-b .platform-copy h2, #cc-b .flow .sect-head h2 { font-size: clamp(1.85rem, 8vw, 2.5rem); }
+
+  #cc-b .industry-grid { grid-template-columns: minmax(0, 1fr); gap: 34px; }
+  #cc-b .industry-body .ticks { grid-template-columns: minmax(0, 1fr); }
+
+  #cc-b .platform-grid { gap: 34px; }
+  #cc-b .feature-list li { padding: 16px 0; }
+  #cc-b .chips span { font-size: 8px; }
+
+  #cc-b .statement-line { font-size: clamp(2.1rem, 9.5vw, 3rem); }
+  #cc-b .statement::after { display: none; }
+
+  #cc-b .tabs { gap: 0 22px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  #cc-b .tab { white-space: nowrap; font-size: 10px; }
+  #cc-b .module-grid, #cc-b .module-grid-2 { grid-template-columns: minmax(0, 1fr); }
+  #cc-b .module figure { aspect-ratio: 16 / 9.6; }
+
+  #cc-b .flow-steps { grid-template-columns: minmax(0, 1fr); gap: 0; margin-top: 32px; }
+  #cc-b .step { border-top: 1px solid var(--line-cream-2); padding: 16px 0; }
+  #cc-b .step-num { margin-bottom: 6px; }
+  #cc-b .flow-figure { padding: 10px; box-shadow: 8px 8px 0 rgba(198, 64, 46, 0.16); }
+  #cc-b .flow-figure img { height: 240px; }
+  #cc-b .flow-callouts { inset: 10px; }
+  #cc-b .flow-callouts span:last-child { display: none; }
+
+  #cc-b .support-grid { grid-template-columns: minmax(0, 1fr); }
+  #cc-b .support-card { padding: 20px 0 24px; }
+  #cc-b .sla-bar { padding: 24px 20px; gap: 20px; }
+  #cc-b .sla-list { grid-template-columns: minmax(0, 1fr); }
+  #cc-b .sla-bar .btn-primary { width: 100%; }
+
+  #cc-b .trainer-grid { gap: 26px 14px; }
+  #cc-b .trainer strong { font-size: 18px; }
+  #cc-b .trainer span { font-size: 8px; }
+  #cc-b .trainer-note { font-size: 10px; line-height: 1.8; }
+  #cc-b .trainer-note a { margin-left: 0; }
+
+  #cc-b .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: clamp(120px, 32vw, 170px); gap: 7px; }
+  #cc-b .gallery-item.span-2 { grid-column: span 1; }
+  #cc-b .gallery-item:nth-child(1) { grid-column: span 2; }
+
+  #cc-b .partner-panel { padding: 22px 20px; box-shadow: 8px 8px 0 rgba(198, 64, 46, 0.12); }
+  #cc-b .partner-facts { grid-template-columns: minmax(0, 1fr); }
+  #cc-b .partner-facts > div:nth-child(even) { padding-left: 0; border-left: 0; }
+
+  #cc-b .faq-item summary { font-size: 17px; padding: 17px 0; }
+  #cc-b .faq-answer { padding-right: 0; font-size: 13.5px; }
+
+  #cc-b .cta h2 { font-size: clamp(2rem, 9vw, 2.8rem); }
+  #cc-b .cta-actions .btn { width: 100%; }
+
+  #cc-b .contact-details > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  #cc-b .contact-actions .btn { flex: 1 1 100%; }
+  #cc-b .field-row { grid-template-columns: minmax(0, 1fr); gap: 0; }
+
+  #cc-b .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  #cc-b .footer-bottom { flex-direction: column; }
+
+  #cc-b .lightbox { grid-template-columns: 40px minmax(0, 1fr) 40px; padding: 16px; }
+  #cc-b .lb-nav { width: 38px; height: 38px; }
+  #cc-b .lb-close { top: 12px; right: 12px; width: 38px; height: 38px; }
+  #cc-b .lb-close .i { width: 16px; height: 16px; }
+
+  #cc-b .wa-float, #cc-b .to-top { bottom: 12px; }
+  #cc-b .wa-float { left: 12px; }
+  #cc-b .to-top { right: 12px; width: 42px; height: 42px; }
+  #cc-b .wa-icon { width: 42px; height: 42px; }
+}
+
+@media (max-width: 420px) {
+  #cc-b .hero-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 0; border-top: 0; }
+  #cc-b .hero-facts li { border-top: 1px solid var(--line); margin-right: 0; padding: 10px 10px 0 0; }
+  #cc-b .hero-facts li:nth-child(even) { padding-left: 14px; border-left: 1px solid var(--line); }
+  #cc-b .stats-grid dt { font-size: 8px; }
+  #cc-b .map-head { flex-wrap: wrap; gap: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #cc-b { scroll-behavior: auto; }
+  #cc-b *, #cc-b *::before, #cc-b *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* widget-only: keep theme text colors from overriding inherited ones */
+#cc-b h1, #cc-b h2, #cc-b h3, #cc-b h4, #cc-b h5, #cc-b h6,
+#cc-b p, #cc-b li, #cc-b dt, #cc-b dd, #cc-b figcaption, #cc-b blockquote { color: inherit; }
+/* widget-only: page scroll lock while menu / lightbox is open */
+body.is-locked { overflow: hidden; }
+/* widget-only: anchor offset under the fixed header (document is the scroll container) */
+html:has(#cc-b) { scroll-behavior: smooth; scroll-padding-top: 100px; }
+@media (prefers-reduced-motion: reduce) { html:has(#cc-b) { scroll-behavior: auto; } }
+
+</style>
+
+<div id="cc-b" class="cc-root">
+<a class="skip" href="#main">Langsung ke konten</a>
+
+  <svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4.5 4.5 0 0 1-.7-8.95A6 6 0 0 1 18 9.5 4.25 4.25 0 0 1 17.5 18Z"/></symbol>
+    <symbol id="i-cube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5Z"/><path d="m3 13 9 5 9-5M3 17.5l9 5 9-5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0M16 5.2a3.2 3.2 0 0 1 0 5.9M17.5 14.4a5.5 5.5 0 0 1 3 5.6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v5c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6Z"/><path d="m8.5 11.5 2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m4 18 5-5 4 4 3-3 4 4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.8"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16.5v2.6a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.7 19.7 0 0 1 1.1 3.3 2 2 0 0 1 3.1 1h2.6a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L6.8 8.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+    <symbol id="i-git" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="5" r="2.2"/><circle cx="18" cy="7" r="2.2"/><circle cx="6" cy="19" r="2.2"/><path d="M6 7.2v9.6M8.2 5h4.3A3.3 3.3 0 0 1 15.8 8.3V9a3 3 0 0 0 3 3"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M8 21h8M12 16.5V21"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10" width="15" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14.5v2.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.5h7L19 8v13.5H6Z"/><path d="M13 2.5V8h6M9 12h6M9 16h6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m10 8.5 5.5 3.5-5.5 3.5Z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"/></symbol>
+    <symbol id="i-caret-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></symbol>
+    <symbol id="i-caret-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 6 6 6-6 6"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8Z"/><path d="M18 16.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8Z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.03 1.02-1.03 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.7.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9 0-3.17-1.24-6.16-3.48-8.41Z"/></symbol>
+  </svg>
+
+  <div class="scrollbar" id="scrollbar" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="CrownCAD Indonesia, kembali ke atas">
+        <img src="/wp-content/uploads/crowncad/images/brand/logo.png" alt="CrownCAD" width="455" height="120">
+        <span class="brand-sep" aria-hidden="true"></span>
+        <span class="brand-by">Partner resmi<br><strong>PT Hetra Teknologi Indonesia</strong></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#mengapa">Industri</a>
+        <a href="#platform">Platform</a>
+        <a href="#modul">Modul</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#trainer">Trainer</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="nav-phone" href="tel:+622138317110">021-3831-7110</a>
+        <a class="btn btn-sm btn-primary" href="https://wa.me/6283815512745?text=Halo%20PT%20Hetra%2C%20saya%20ingin%20mencoba%20CrownCAD%20untuk%20tim%20kami." target="_blank" rel="noopener">
+          Coba gratis <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg>
+        </a>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg class="i" aria-hidden="true"><use href="#i-menu"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-head">
+      <a class="brand" href="#top" aria-label="CrownCAD Indonesia">
+        <img src="/wp-content/uploads/crowncad/images/brand/logo-white.png" alt="CrownCAD" width="455" height="120">
+      </a>
+      <button class="menu-btn" id="menuClose" type="button" aria-label="Tutup menu">
+        <svg class="i" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+    <nav class="mobile-links" aria-label="Navigasi seluler">
+      <a href="#mengapa"><span>01</span>Industri</a>
+      <a href="#platform"><span>02</span>Platform</a>
+      <a href="#modul"><span>03</span>Modul</a>
+      <a href="#alur"><span>04</span>Alur kerja</a>
+      <a href="#layanan"><span>05</span>Layanan</a>
+      <a href="#trainer"><span>06</span>Trainer</a>
+      <a href="#galeri"><span>07</span>Galeri</a>
+      <a href="#partner"><span>08</span>Partner</a>
+      <a href="#faq"><span>09</span>FAQ</a>
+      <a href="#kontak"><span>10</span>Kontak</a>
+    </nav>
+    <div class="mobile-foot">
+      <a class="btn btn-primary" href="https://wa.me/6283815512745?text=Halo%20PT%20Hetra%2C%20saya%20ingin%20mencoba%20CrownCAD." target="_blank" rel="noopener">Coba gratis 30 hari</a>
+      <a class="btn btn-outline" href="mailto:adam@hetratekno.com">adam@hetratekno.com</a>
+      <p>PT Hetra Teknologi Indonesia<br>Plaza Summarecon Bekasi, Lantai 6</p>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="/wp-content/uploads/crowncad/images/hero/hero-bg-1440.webp"
+             srcset="/wp-content/uploads/crowncad/images/hero/hero-bg-960.webp 960w, /wp-content/uploads/crowncad/images/hero/hero-bg-1440.webp 1440w, /wp-content/uploads/crowncad/images/hero/hero-bg-1920.webp 1920w"
+             sizes="100vw" width="1920" height="1080" alt=""
+             loading="eager" decoding="async" fetchpriority="high">
+        <span class="hero-veil"></span>
+      </div>
+
+      <div class="wrap hero-inner">
+        <p class="hero-tag mono" aria-hidden="true">CrownCAD · browser workspace — 01</p>
+        <div class="hero-copy" data-enter>
+          <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> CAD cloud-native · Partner resmi di Indonesia</p>
+          <h1>CAD 3D cloud untuk <span class="hero-accent">tim engineering Indonesia.</span></h1>
+          <p class="hero-sub">CrownCAD berjalan di browser: part, assembly, drawing, dan kolaborasi real-time pada satu model. PT Hetra mendampingi lisensi, implementasi, dan pelatihan tim Anda.</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="https://wa.me/6283815512745?text=Halo%20PT%20Hetra%2C%20saya%20ingin%20mencoba%20CrownCAD%20gratis%2030%20hari%20untuk%20tim%20kami." target="_blank" rel="noopener">
+              Coba gratis 30 hari <svg class="i" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+            </a>
+            <a class="btn btn-ghost" href="#kontak">
+              <svg class="i" aria-hidden="true"><use href="#i-play"></use></svg> Jadwalkan demo
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-aside" aria-label="Angka utama dan status partner">
+          <ul class="hero-facts" aria-label="Angka utama CrownCAD">
+            <li><strong>500.000+</strong><span>pengguna terdaftar</span></li>
+            <li><strong>10.000+</strong><span>perusahaan</span></li>
+            <li><strong>300.000+</strong><span>part per assembly</span></li>
+          </ul>
+          <div class="seal">
+            <div class="seal-logos">
+              <img src="/wp-content/uploads/crowncad/images/brand/logo.png" alt="CrownCAD" width="455" height="120">
+              <span aria-hidden="true"></span>
+              <img src="/wp-content/uploads/crowncad/images/brand/hetra-dark.webp" alt="PT Hetra Teknologi Indonesia" width="1006" height="369">
+            </div>
+            <p><span class="dot" aria-hidden="true"></span> Partner resmi CrownCAD di Indonesia</p>
+          </div>
+        </aside>
+      </div>
+
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" aria-label="CrownCAD dalam angka">
+      <div class="wrap stats-inner">
+        <p class="stats-label mono">Platform yang dipakai tim desain di 10.000+ perusahaan</p>
+        <dl class="stats-grid">
+          <div><dt>Pengguna terdaftar</dt><dd>500.000<span>+</span></dd></div>
+          <div><dt>Perusahaan</dt><dd>10.000<span>+</span></dd></div>
+          <div><dt>Part per assembly</dt><dd>300.000<span>+</span></dd></div>
+          <div><dt>Uptime SLA</dt><dd>99,9<span>%</span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- INDUSTRI -->
+    <section class="sect sect-light industries" id="mengapa">
+      <div class="wrap">
+        <div class="sect-head">
+          <p class="kicker"><span class="mono">01</span> Mengapa CrownCAD</p>
+          <h2>Dipercaya di berbagai industri.</h2>
+          <p class="lead">Satu platform untuk tim yang membuat produk nyata — dari komponen presisi sampai lini produksi.</p>
+        </div>
+
+        <div class="industry-grid">
+          <article class="industry">
+            <figure class="industry-media">
+              <img src="/wp-content/uploads/crowncad/images/industries/aerospace-assembly-960.webp"
+                   srcset="/wp-content/uploads/crowncad/images/industries/aerospace-assembly-480.webp 480w, /wp-content/uploads/crowncad/images/industries/aerospace-assembly-960.webp 960w, /wp-content/uploads/crowncad/images/industries/aerospace-assembly-1600.webp 1600w"
+                   sizes="(min-width: 1024px) 46vw, 100vw" width="1600" height="1065" alt="Teknisi merakit struktur pesawat di lini produksi" loading="lazy" decoding="async">
+              <span class="media-index mono">01</span>
+            </figure>
+            <div class="industry-body">
+              <h3>Aerospace</h3>
+              <p>Desain komponen dan struktur pesawat menuntut presisi tinggi serta kolaborasi lintas tim.</p>
+              <ul class="ticks">
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Part &amp; assembly kompleks</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Review desain real-time</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Kompatibilitas format CAD</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Manajemen revisi terpusat</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="industry">
+            <figure class="industry-media">
+              <img src="/wp-content/uploads/crowncad/images/industries/machinery-1200.webp"
+                   sizes="(min-width: 1024px) 46vw, 100vw" width="1200" height="800" alt="Gambar teknik mesin dan jangka sorong" loading="lazy" decoding="async">
+              <span class="media-index mono">02</span>
+            </figure>
+            <div class="industry-body">
+              <h3>Machinery</h3>
+              <p>Perancangan mesin dan peralatan industri dengan geometri kompleks serta banyak komponen.</p>
+              <ul class="ticks">
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Sheet metal &amp; weldment</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Library part GB/ISO</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Assembly 300K+ part</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Drawing otomatis</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="industry">
+            <figure class="industry-media">
+              <img src="/wp-content/uploads/crowncad/images/industries/transportation-1200.webp"
+                   sizes="(min-width: 1024px) 46vw, 100vw" width="1200" height="900" alt="Deretan mobil di dealer otomotif" loading="lazy" decoding="async">
+              <span class="media-index mono">03</span>
+            </figure>
+            <div class="industry-body">
+              <h3>Automotive</h3>
+              <p>Pengembangan kendaraan dan komponen otomotif dari konsep hingga siap produksi.</p>
+              <ul class="ticks">
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Surface &amp; solid modeling</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Drawing 2D otomatis</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Manajemen versi</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Approval workflow</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="industry">
+            <figure class="industry-media">
+              <img src="/wp-content/uploads/crowncad/images/industries/education-1200.webp"
+                   sizes="(min-width: 1024px) 46vw, 100vw" width="1200" height="747" alt="Suasana kelas dengan guru dan siswa" loading="lazy" decoding="async">
+              <span class="media-index mono">04</span>
+            </figure>
+            <div class="industry-body">
+              <h3>Education</h3>
+              <p>Mendukung pembelajaran CAD di kampus dan sekolah kejuruan tanpa instalasi berat.</p>
+              <ul class="ticks">
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Akses lewat browser</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Lisensi lab &amp; kelas</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Kolaborasi tugas</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Tanpa spek tinggi</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATFORM -->
+    <section class="sect sect-dark platform" id="platform">
+      <div class="wrap platform-grid">
+        <div class="platform-copy">
+          <p class="kicker"><span class="mono">02</span> Platform cloud</p>
+          <h2>Bekerja dari mana saja, kapan saja.</h2>
+          <p class="lead">Platform cloud-native yang memungkinkan tim Anda berkolaborasi secara real-time dari lokasi berbeda — satu model, satu versi kebenaran.</p>
+
+          <ul class="feature-list">
+            <li>
+              <span class="feature-icon"><svg class="i" aria-hidden="true"><use href="#i-users"></use></svg></span>
+              <div><h3>Multi-user real-time</h3><p>Beberapa engineer membuka dan mengedit model yang sama secara bersamaan.</p></div>
+            </li>
+            <li>
+              <span class="feature-icon"><svg class="i" aria-hidden="true"><use href="#i-git"></use></svg></span>
+              <div><h3>Versioning terpusat</h3><p>Riwayat revisi, branch, dan rollback tanpa file salinan yang berserakan.</p></div>
+            </li>
+            <li>
+              <span class="feature-icon"><svg class="i" aria-hidden="true"><use href="#i-shield"></use></svg></span>
+              <div><h3>Aman untuk tim</h3><p>SSO/SAML, RBAC granular, audit trail, dan data terenkripsi.</p></div>
+            </li>
+            <li>
+              <span class="feature-icon"><svg class="i" aria-hidden="true"><use href="#i-monitor"></use></svg></span>
+              <div><h3>Lintas perangkat</h3><p>Desain dan review di PC, tablet, maupun smartphone.</p></div>
+            </li>
+          </ul>
+
+          <div class="chips">
+            <span>99,9% uptime SLA</span><span>ISO 27001</span><span>Backup harian</span><span>DGM + DCS</span>
+          </div>
+        </div>
+
+        <figure class="platform-figure">
+          <div class="figure-frame">
+            <img src="/wp-content/uploads/crowncad/images/collaboration-management/collaboration-960.webp"
+                 srcset="/wp-content/uploads/crowncad/images/collaboration-management/collaboration-480.webp 480w, /wp-content/uploads/crowncad/images/collaboration-management/collaboration-960.webp 960w, /wp-content/uploads/crowncad/images/collaboration-management/collaboration-1020.webp 1020w"
+                 sizes="(min-width: 1024px) 50vw, 100vw" width="1020" height="554"
+                 alt="CrownCAD terbuka di monitor, laptop, tablet, dan smartphone dengan model yang sama" loading="lazy" decoding="async">
+            <span class="figure-tag mono">CrownCAD / Project view</span>
+          </div>
+          <figcaption>Model assembly yang sama di empat perangkat, dengan riwayat versi dan panel kolaborasi.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- STATEMENT -->
+    <section class="statement" aria-label="Prinsip version control">
+      <div class="wrap statement-inner">
+        <p class="mono statement-kicker">Version control terpusat</p>
+        <p class="statement-line">Satu model. Satu versi kebenaran.</p>
+        <p class="statement-sub">Riwayat revisi, branch, dan rollback tanpa file salinan yang berserakan.</p>
+      </div>
+    </section>
+
+    <!-- MODUL -->
+    <section class="sect sect-light modules" id="modul">
+      <div class="wrap">
+        <div class="sect-head">
+          <p class="kicker"><span class="mono">03</span> Modul</p>
+          <h2>Kemampuan inti untuk alur kerja CAD Anda.</h2>
+          <p class="lead">Modul yang bisa dinyalakan sesuai kebutuhan tim — dari sketching sampai manajemen versi.</p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Kategori modul">
+          <button class="tab is-active" id="tab-core" role="tab" aria-selected="true" aria-controls="panel-core" type="button">Modul Inti <span class="mono">05</span></button>
+          <button class="tab" id="tab-pro" role="tab" aria-selected="false" aria-controls="panel-pro" type="button">Profesional <span class="mono">04</span></button>
+          <button class="tab" id="tab-collab" role="tab" aria-selected="false" aria-controls="panel-collab" type="button">Kolaborasi <span class="mono">02</span></button>
+        </div>
+
+        <div class="panel is-active" id="panel-core" role="tabpanel" aria-labelledby="tab-core" tabindex="0">
+          <div class="module-grid">
+            <article class="module">
+              <figure><img src="/wp-content/uploads/crowncad/images/core-modeling/sketch-960.webp" srcset="/wp-content/uploads/crowncad/images/core-modeling/sketch-480.webp 480w, /wp-content/uploads/crowncad/images/core-modeling/sketch-960.webp 960w, /wp-content/uploads/crowncad/images/core-modeling/sketch-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Sketch 2D dengan dimensi dan constraint" loading="lazy" decoding="async"><span class="module-index mono">01</span></figure>
+              <div class="module-body">
+                <h3>Sketching</h3>
+                <p>Polyline, busur, slot, dan spline dengan dimensi cepat serta constraint geometris. Fillet, chamfer, trim, dan offset dalam satu kanvas.</p>
+              </div>
+            </article>
+            <article class="module">
+              <figure><img src="/wp-content/uploads/crowncad/images/core-modeling/part-960.webp" srcset="/wp-content/uploads/crowncad/images/core-modeling/part-480.webp 480w, /wp-content/uploads/crowncad/images/core-modeling/part-960.webp 960w, /wp-content/uploads/crowncad/images/core-modeling/part-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Model part mesin 3D" loading="lazy" decoding="async"><span class="module-index mono">02</span></figure>
+              <div class="module-body">
+                <h3>Desain Part</h3>
+                <p>Solid parametrik berbasis fitur, surface dan mesh hybrid, serta direct editing untuk model parametrik maupun non-parametrik.</p>
+              </div>
+            </article>
+            <article class="module">
+              <figure><img src="/wp-content/uploads/crowncad/images/core-modeling/assembly-960.webp" srcset="/wp-content/uploads/crowncad/images/core-modeling/assembly-480.webp 480w, /wp-content/uploads/crowncad/images/core-modeling/assembly-960.webp 960w, /wp-content/uploads/crowncad/images/core-modeling/assembly-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Assembly dengan banyak komponen" loading="lazy" decoding="async"><span class="module-index mono">03</span></figure>
+              <div class="module-body">
+                <h3>Desain Assembly</h3>
+                <p>Top-down atau bottom-up, pemasangan komponen yang efisien, sinkron real-time antara assembly dan part, plus cek interferensi.</p>
+              </div>
+            </article>
+            <article class="module">
+              <figure><img src="/wp-content/uploads/crowncad/images/core-modeling/drawing-960.webp" srcset="/wp-content/uploads/crowncad/images/core-modeling/drawing-480.webp 480w, /wp-content/uploads/crowncad/images/core-modeling/drawing-960.webp 960w, /wp-content/uploads/crowncad/images/core-modeling/drawing-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Drawing 2D otomatis dari model 3D" loading="lazy" decoding="async"><span class="module-index mono">04</span></figure>
+              <div class="module-body">
+                <h3>Drawing</h3>
+                <p>Proyeksi otomatis dari model 3D, drafting sesuai standar internasional, dimensi otomatis, dan model 2D–3D yang tetap sinkron.</p>
+              </div>
+            </article>
+            <article class="module">
+              <figure><img src="/wp-content/uploads/crowncad/images/core-modeling/compatibility-960.webp" srcset="/wp-content/uploads/crowncad/images/core-modeling/compatibility-480.webp 480w, /wp-content/uploads/crowncad/images/core-modeling/compatibility-960.webp 960w, /wp-content/uploads/crowncad/images/core-modeling/compatibility-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Kompatibilitas format CAD" loading="lazy" decoding="async"><span class="module-index mono">05</span></figure>
+              <div class="module-body">
+                <h3>Kompatibilitas Data</h3>
+                <p>Import IGES, STEP, dan Parasolid. Baca model CATIA, NX, Creo, SOLIDWORKS, Inventor, Revit, serta AutoCAD — lalu export kembali sesuai kebutuhan.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="panel" id="panel-pro" role="tabpanel" aria-labelledby="tab-pro" tabindex="0" hidden>
+          <div class="module-grid">
+            <article class="module">
+              <figure><img src="/wp-content/uploads/crowncad/images/professional-modules/sheet-metal-module-960.webp" srcset="/wp-content/uploads/crowncad/images/professional-modules/sheet-metal-module-480.webp 480w, /wp-content/uploads/crowncad/images/professional-modules/sheet-metal-module-960.webp 960w, /wp-content/uploads/crowncad/images/professional-modules/sheet-metal-module-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Modul sheet metal" loading="lazy" decoding="async"><span class="module-index mono">01</span></figure>
+              <div class="module-body">
+                <h3>Sheet Metal</h3>
+                <p>Fitur sheet metal dasar seperti louver dan stamping, dengan unfolding dan folding cepat untuk alur desain ke produksi.</p>
+              </div>
+            </article>
+            <article class="module">
+              <figure><img src="/wp-content/uploads/crowncad/images/professional-modules/weldment-module-960.webp" srcset="/wp-content/uploads/crowncad/images/professional-modules/weldment-module-480.webp 480w, /wp-content/uploads/crowncad/images/professional-modules/weldment-module-960.webp 960w, /wp-content/uploads/crowncad/images/professional-modules/weldment-module-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Modul weldment" loading="lazy" decoding="async"><span class="module-index mono">02</span></figure>
+              <div class="module-body">
+                <h3>Weldment</h3>
+                <p>Library profil struktural standar, sketch path 2D dan 3D, modifikasi gaya koneksi sudut, dan export cut list.</p>
+              </div>
+            </article>
+            <article class="module">
+              <figure><img src="/wp-content/uploads/crowncad/images/professional-modules/mbd-960.webp" srcset="/wp-content/uploads/crowncad/images/professional-modules/mbd-480.webp 480w, /wp-content/uploads/crowncad/images/professional-modules/mbd-960.webp 960w, /wp-content/uploads/crowncad/images/professional-modules/mbd-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Model based definition dengan anotasi 3D" loading="lazy" decoding="async"><span class="module-index mono">03</span></figure>
+              <div class="module-body">
+                <h3>MBD</h3>
+                <p>Anotasi dan catatan 3D langsung, transfer PMI ke drawing 2D, serta import data MBD dari model eksternal.</p>
+              </div>
+            </article>
+            <article class="module">
+              <figure><img src="/wp-content/uploads/crowncad/images/professional-modules/animation-960.webp" srcset="/wp-content/uploads/crowncad/images/professional-modules/animation-480.webp 480w, /wp-content/uploads/crowncad/images/professional-modules/animation-960.webp 960w, /wp-content/uploads/crowncad/images/professional-modules/animation-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Animasi mekanisme assembly" loading="lazy" decoding="async"><span class="module-index mono">04</span></figure>
+              <div class="module-body">
+                <h3>Animasi</h3>
+                <p>Simulasi gerakan mekanisme dari constraint assembly, keyframe berbasis waktu, dan output video AVI/MP4.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="panel" id="panel-collab" role="tabpanel" aria-labelledby="tab-collab" tabindex="0" hidden>
+          <div class="module-grid module-grid-2">
+            <article class="module">
+              <figure><img src="/wp-content/uploads/crowncad/images/collaboration-management/version-management-960.webp" srcset="/wp-content/uploads/crowncad/images/collaboration-management/version-management-480.webp 480w, /wp-content/uploads/crowncad/images/collaboration-management/version-management-960.webp 960w, /wp-content/uploads/crowncad/images/collaboration-management/version-management-1020.webp 1020w" sizes="(min-width: 1024px) 50vw, 100vw" width="1020" height="554" alt="Panel manajemen versi CrownCAD" loading="lazy" decoding="async"><span class="module-index mono">01</span></figure>
+              <div class="module-body">
+                <h3>Manajemen Versi</h3>
+                <p>Penyimpanan dan transmisi cloud terenkripsi, riwayat editing lengkap dengan rollback, serta kontrol versi lewat node dan branch.</p>
+              </div>
+            </article>
+            <article class="module">
+              <figure><img src="/wp-content/uploads/crowncad/images/collaboration-management/collaboration-960.webp" srcset="/wp-content/uploads/crowncad/images/collaboration-management/collaboration-480.webp 480w, /wp-content/uploads/crowncad/images/collaboration-management/collaboration-960.webp 960w, /wp-content/uploads/crowncad/images/collaboration-management/collaboration-1020.webp 1020w" sizes="(min-width: 1024px) 50vw, 100vw" width="1020" height="554" alt="Kolaborasi CrownCAD di beberapa perangkat" loading="lazy" decoding="async"><span class="module-index mono">02</span></figure>
+              <div class="module-body">
+                <h3>Kolaborasi</h3>
+                <p>Multi-user pada model yang sama, tim dengan izin dan peran granular, review di PC, tablet, dan smartphone — tanpa transfer file bolak-balik.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALUR -->
+    <section class="sect sect-dark flow" id="alur">
+      <div class="wrap">
+        <div class="sect-head">
+          <p class="kicker"><span class="mono">04</span> Alur kerja</p>
+          <h2>Dari sketch ke drawing, tanpa ekspor ulang.</h2>
+          <p class="lead">Empat tahap yang saling terhubung. Perubahan di satu tahap ikut terbawa ke tahap berikutnya.</p>
+        </div>
+
+        <ol class="flow-steps">
+          <li class="step">
+            <span class="step-num mono">01</span>
+            <div><h3>Sketch</h3><p>Dimensi cepat, constraint geometris, dan alat editing fillet, chamfer, trim, offset.</p></div>
+          </li>
+          <li class="step">
+            <span class="step-num mono">02</span>
+            <div><h3>Part</h3><p>Solid parametrik berbasis fitur, surface/mesh hybrid, dan direct editing.</p></div>
+          </li>
+          <li class="step">
+            <span class="step-num mono">03</span>
+            <div><h3>Assembly</h3><p>Top-down atau bottom-up, sinkron real-time, dan pemeriksaan interferensi.</p></div>
+          </li>
+          <li class="step">
+            <span class="step-num mono">04</span>
+            <div><h3>Drawing</h3><p>Proyeksi otomatis, dimensi otomatis, dan model 2D–3D yang tetap sinkron.</p></div>
+          </li>
+        </ol>
+
+        <figure class="flow-figure">
+          <img src="/wp-content/uploads/crowncad/images/core-modeling/part-1020.webp"
+               srcset="/wp-content/uploads/crowncad/images/core-modeling/part-480.webp 480w, /wp-content/uploads/crowncad/images/core-modeling/part-960.webp 960w, /wp-content/uploads/crowncad/images/core-modeling/part-1020.webp 1020w"
+               sizes="(min-width: 1024px) 58vw, 100vw" width="1020" height="554"
+               alt="Model part hasil pemodelan parametrik di CrownCAD" loading="lazy" decoding="async">
+          <div class="flow-callouts" aria-hidden="true">
+            <span class="mono">PARAMETRIC / FEATURE TREE</span>
+            <span class="mono">REAL-TIME SYNC</span>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- LAYANAN -->
+    <section class="sect sect-light support" id="layanan">
+      <div class="wrap">
+        <div class="sect-head wide">
+          <div>
+            <p class="kicker"><span class="mono">05</span> After sales</p>
+            <h2>Setelah lisensi aktif, kami tetap mendampingi.</h2>
+          </div>
+          <p class="lead">Adopsi CAD cloud bukan sekadar ganti software. Kami bantu tim Anda dari implementasi awal, pelatihan, sampai operasional harian.</p>
+        </div>
+
+        <div class="support-grid">
+          <article class="support-card">
+            <span class="support-num mono">01</span>
+            <h3>Onboarding &amp; Implementasi</h3>
+            <p>Setup workspace, migrasi data dari CAD lama, dan uji coba alur kerja sebelum rollout ke seluruh tim.</p>
+          </article>
+          <article class="support-card">
+            <span class="support-num mono">02</span>
+            <h3>Pelatihan Tim &amp; Sertifikasi</h3>
+            <p>Training basic sampai advanced, materi berbahasa Indonesia, plus sertifikasi untuk memastikan tim siap produksi.</p>
+          </article>
+          <article class="support-card">
+            <span class="support-num mono">03</span>
+            <h3>Dukungan Teknis Lokal</h3>
+            <p>Tim support Indonesia dengan respons di bawah 1×24 jam pada hari kerja dan jalur eskalasi ke engineer produk.</p>
+          </article>
+          <article class="support-card">
+            <span class="support-num mono">04</span>
+            <h3>Update &amp; Fitur Baru</h3>
+            <p>Rilis fitur baru, perbaikan bug, dan patch keamanan langsung aktif tanpa instalasi ulang.</p>
+          </article>
+          <article class="support-card">
+            <span class="support-num mono">05</span>
+            <h3>Konsultasi &amp; Best Practice</h3>
+            <p>Review workflow CAD, optimasi model besar, dan rekomendasi standar drafting sesuai industri Anda.</p>
+          </article>
+          <article class="support-card">
+            <span class="support-num mono">06</span>
+            <h3>SLA &amp; Jaminan Layanan</h3>
+            <p>Uptime 99,9%, backup harian, dan audit trail lengkap — dengan perjanjian layanan yang jelas dan terukur.</p>
+          </article>
+        </div>
+
+        <div class="sla-bar">
+          <div>
+            <h3>Setiap implementasi sudah termasuk dukungan after-sales.</h3>
+            <p>Pendampingan penuh — dari hari pertama sampai tim Anda mandiri.</p>
+          </div>
+          <ul class="sla-list">
+            <li><span></span>Onboarding 1-on-1</li>
+            <li><span></span>Training</li>
+            <li><span></span>Respons maks. 1×24 jam</li>
+            <li><span></span>Update cloud gratis</li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/6283815512745?text=Halo%20PT%20Hetra%2C%20saya%20ingin%20menjadwalkan%20konsultasi%20implementasi%20CrownCAD." target="_blank" rel="noopener">Jadwalkan konsultasi <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAINER -->
+    <section class="sect sect-dark trainers" id="trainer">
+      <div class="wrap">
+        <div class="sect-head wide">
+          <div>
+            <p class="kicker"><span class="mono">06</span> Tim</p>
+            <h2>Trainer berpengalaman.</h2>
+          </div>
+          <p class="lead">Kenali tim trainer yang mendampingi tim Anda mengadopsi CrownCAD — dari dasar sampai alur kerja produksi.</p>
+        </div>
+
+        <div class="trainer-grid">
+          <figure class="trainer">
+            <img src="/wp-content/uploads/crowncad/images/trainer/ardias-650.webp" srcset="/wp-content/uploads/crowncad/images/trainer/ardias-480.webp 480w, /wp-content/uploads/crowncad/images/trainer/ardias-650.webp 650w" sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 45vw" width="650" height="1004" alt="Ardias, trainer CrownCAD" loading="lazy" decoding="async">
+            <figcaption><strong>Ardias</strong><span>Trainer CrownCAD</span></figcaption>
+          </figure>
+          <figure class="trainer">
+            <img src="/wp-content/uploads/crowncad/images/trainer/aryo-960.webp" srcset="/wp-content/uploads/crowncad/images/trainer/aryo-480.webp 480w, /wp-content/uploads/crowncad/images/trainer/aryo-960.webp 960w, /wp-content/uploads/crowncad/images/trainer/aryo-1086.webp 1086w" sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 45vw" width="1086" height="1448" alt="Aryo, trainer CrownCAD" loading="lazy" decoding="async">
+            <figcaption><strong>Aryo</strong><span>Trainer CrownCAD</span></figcaption>
+          </figure>
+          <figure class="trainer">
+            <img src="/wp-content/uploads/crowncad/images/trainer/firas-650.webp" srcset="/wp-content/uploads/crowncad/images/trainer/firas-480.webp 480w, /wp-content/uploads/crowncad/images/trainer/firas-650.webp 650w" sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 45vw" width="650" height="1004" alt="Firas, trainer CrownCAD" loading="lazy" decoding="async">
+            <figcaption><strong>Firas</strong><span>Trainer CrownCAD</span></figcaption>
+          </figure>
+          <figure class="trainer">
+            <img src="/wp-content/uploads/crowncad/images/trainer/zefi-650.webp" srcset="/wp-content/uploads/crowncad/images/trainer/zefi-480.webp 480w, /wp-content/uploads/crowncad/images/trainer/zefi-650.webp 650w" sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 45vw" width="650" height="1004" alt="Zefi, trainer CrownCAD" loading="lazy" decoding="async">
+            <figcaption><strong>Zefi</strong><span>Trainer CrownCAD</span></figcaption>
+          </figure>
+        </div>
+        <p class="trainer-note">Sesi in-house dan online, materi berbahasa Indonesia. <a href="https://wa.me/6283815512745?text=Halo%20PT%20Hetra%2C%20saya%20ingin%20informasi%20jadwal%20training%20CrownCAD." target="_blank" rel="noopener">Tanyakan jadwal training <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg></a></p>
+      </div>
+    </section>
+
+    <!-- GALERI -->
+    <section class="sect sect-light gallery" id="galeri">
+      <div class="wrap">
+        <div class="sect-head wide">
+          <div>
+            <p class="kicker"><span class="mono">07</span> Galeri</p>
+            <h2>Momen bersama pengguna.</h2>
+          </div>
+          <p class="lead">Sesi pelatihan, workshop, dan kunjungan industri bersama tim engineering di berbagai perusahaan serta institusi pendidikan di Indonesia.</p>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <button class="gallery-item span-2" type="button" data-full="/wp-content/uploads/crowncad/images/gallery/gallery-13-1600.webp" aria-label="Buka foto 1 dari 12">
+            <img src="/wp-content/uploads/crowncad/images/gallery/gallery-13-960.webp" srcset="/wp-content/uploads/crowncad/images/gallery/gallery-13-480.webp 480w, /wp-content/uploads/crowncad/images/gallery/gallery-13-960.webp 960w, /wp-content/uploads/crowncad/images/gallery/gallery-13-1600.webp 1600w" sizes="(min-width: 1024px) 50vw, 100vw" width="1600" height="1200" alt="Sesi training CrownCAD bersama tim engineering" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="/wp-content/uploads/crowncad/images/gallery/gallery-02-960.webp" aria-label="Buka foto 2 dari 12">
+            <img src="/wp-content/uploads/crowncad/images/gallery/gallery-02-960.webp" srcset="/wp-content/uploads/crowncad/images/gallery/gallery-02-480.webp 480w, /wp-content/uploads/crowncad/images/gallery/gallery-02-960.webp 960w" sizes="(min-width: 1024px) 25vw, 50vw" width="960" height="1280" alt="Peserta workshop CrownCAD" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="/wp-content/uploads/crowncad/images/gallery/gallery-05-1280.webp" aria-label="Buka foto 3 dari 12">
+            <img src="/wp-content/uploads/crowncad/images/gallery/gallery-05-960.webp" srcset="/wp-content/uploads/crowncad/images/gallery/gallery-05-480.webp 480w, /wp-content/uploads/crowncad/images/gallery/gallery-05-960.webp 960w, /wp-content/uploads/crowncad/images/gallery/gallery-05-1280.webp 1280w" sizes="(min-width: 1024px) 25vw, 50vw" width="1280" height="960" alt="Tim desain berdiskusi di depan layar" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="/wp-content/uploads/crowncad/images/gallery/gallery-14-1600.webp" aria-label="Buka foto 4 dari 12">
+            <img src="/wp-content/uploads/crowncad/images/gallery/gallery-14-960.webp" srcset="/wp-content/uploads/crowncad/images/gallery/gallery-14-480.webp 480w, /wp-content/uploads/crowncad/images/gallery/gallery-14-960.webp 960w, /wp-content/uploads/crowncad/images/gallery/gallery-14-1600.webp 1600w" sizes="(min-width: 1024px) 50vw, 100vw" width="1600" height="900" alt="Sesi presentasi CrownCAD" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="/wp-content/uploads/crowncad/images/gallery/gallery-15-1600.webp" aria-label="Buka foto 5 dari 12">
+            <img src="/wp-content/uploads/crowncad/images/gallery/gallery-15-960.webp" srcset="/wp-content/uploads/crowncad/images/gallery/gallery-15-480.webp 480w, /wp-content/uploads/crowncad/images/gallery/gallery-15-960.webp 960w, /wp-content/uploads/crowncad/images/gallery/gallery-15-1600.webp 1600w" sizes="(min-width: 1024px) 25vw, 50vw" width="1600" height="1200" alt="Kunjungan industri bersama pengguna CrownCAD" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="/wp-content/uploads/crowncad/images/gallery/gallery-16-1600.webp" aria-label="Buka foto 6 dari 12">
+            <img src="/wp-content/uploads/crowncad/images/gallery/gallery-16-960.webp" srcset="/wp-content/uploads/crowncad/images/gallery/gallery-16-480.webp 480w, /wp-content/uploads/crowncad/images/gallery/gallery-16-960.webp 960w, /wp-content/uploads/crowncad/images/gallery/gallery-16-1600.webp 1600w" sizes="(min-width: 1024px) 25vw, 50vw" width="1600" height="1200" alt="Peserta pelatihan CrownCAD" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="/wp-content/uploads/crowncad/images/gallery/gallery-17-1600.webp" aria-label="Buka foto 7 dari 12">
+            <img src="/wp-content/uploads/crowncad/images/gallery/gallery-17-960.webp" srcset="/wp-content/uploads/crowncad/images/gallery/gallery-17-480.webp 480w, /wp-content/uploads/crowncad/images/gallery/gallery-17-960.webp 960w, /wp-content/uploads/crowncad/images/gallery/gallery-17-1600.webp 1600w" sizes="(min-width: 1024px) 25vw, 50vw" width="1600" height="1200" alt="Workshop CrownCAD di kampus" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="/wp-content/uploads/crowncad/images/gallery/gallery-19-1600.webp" aria-label="Buka foto 8 dari 12">
+            <img src="/wp-content/uploads/crowncad/images/gallery/gallery-19-960.webp" srcset="/wp-content/uploads/crowncad/images/gallery/gallery-19-480.webp 480w, /wp-content/uploads/crowncad/images/gallery/gallery-19-960.webp 960w, /wp-content/uploads/crowncad/images/gallery/gallery-19-1600.webp 1600w" sizes="(min-width: 1024px) 25vw, 50vw" width="1600" height="1200" alt="Diskusi tim engineering" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="/wp-content/uploads/crowncad/images/gallery/gallery-20-1600.webp" aria-label="Buka foto 9 dari 12">
+            <img src="/wp-content/uploads/crowncad/images/gallery/gallery-20-960.webp" srcset="/wp-content/uploads/crowncad/images/gallery/gallery-20-480.webp 480w, /wp-content/uploads/crowncad/images/gallery/gallery-20-960.webp 960w, /wp-content/uploads/crowncad/images/gallery/gallery-20-1600.webp 1600w" sizes="(min-width: 1024px) 25vw, 50vw" width="1600" height="1200" alt="Sesi tanya jawab CrownCAD" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="/wp-content/uploads/crowncad/images/gallery/gallery-12-1280.webp" aria-label="Buka foto 10 dari 12">
+            <img src="/wp-content/uploads/crowncad/images/gallery/gallery-12-960.webp" srcset="/wp-content/uploads/crowncad/images/gallery/gallery-12-480.webp 480w, /wp-content/uploads/crowncad/images/gallery/gallery-12-960.webp 960w, /wp-content/uploads/crowncad/images/gallery/gallery-12-1280.webp 1280w" sizes="(min-width: 1024px) 25vw, 50vw" width="1280" height="960" alt="Pengguna CrownCAD di lokasi pelanggan" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="/wp-content/uploads/crowncad/images/gallery/gallery-24-1536.webp" aria-label="Buka foto 11 dari 12">
+            <img src="/wp-content/uploads/crowncad/images/gallery/gallery-24-960.webp" srcset="/wp-content/uploads/crowncad/images/gallery/gallery-24-480.webp 480w, /wp-content/uploads/crowncad/images/gallery/gallery-24-960.webp 960w, /wp-content/uploads/crowncad/images/gallery/gallery-24-1536.webp 1536w" sizes="(min-width: 1024px) 25vw, 50vw" width="1536" height="1224" alt="Tim CrownCAD Indonesia" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item span-2" type="button" data-full="/wp-content/uploads/crowncad/images/gallery/gallery-01-1280.webp" aria-label="Buka foto 12 dari 12">
+            <img src="/wp-content/uploads/crowncad/images/gallery/gallery-01-960.webp" srcset="/wp-content/uploads/crowncad/images/gallery/gallery-01-480.webp 480w, /wp-content/uploads/crowncad/images/gallery/gallery-01-960.webp 960w, /wp-content/uploads/crowncad/images/gallery/gallery-01-1280.webp 1280w" sizes="(min-width: 1024px) 50vw, 100vw" width="1280" height="960" alt="Dokumentasi kegiatan CrownCAD Indonesia" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNER -->
+    <section class="sect partner" id="partner">
+      <div class="wrap partner-grid">
+        <div class="partner-panel">
+          <div class="partner-logos">
+            <img src="/wp-content/uploads/crowncad/images/brand/logo-white.png" alt="CrownCAD" width="455" height="120">
+            <span aria-hidden="true"></span>
+            <img src="/wp-content/uploads/crowncad/images/brand/hetra-white.png" alt="PT Hetra Teknologi Indonesia" width="980" height="361">
+          </div>
+          <p class="partner-tag"><span class="dot" aria-hidden="true"></span> Partner resmi CrownCAD di Indonesia</p>
+          <p class="partner-line">Satu platform cloud, satu titik dukungan.</p>
+          <div class="partner-facts">
+            <div><strong>Cloud CAD</strong><span>Akses browser</span></div>
+            <div><strong>Real-time</strong><span>Kolaborasi</span></div>
+            <div><strong>Dual-kernel</strong><span>DGM + DCS</span></div>
+            <div><strong>Drawing 2D</strong><span>Otomatis</span></div>
+            <div><strong>Version control</strong><span>Terpusat</span></div>
+            <div><strong>Multi-CAD</strong><span>Import &amp; export</span></div>
+          </div>
+          <div class="partner-foot">
+            <p class="mono">Sales / Training / Consulting</p>
+            <p>Bekasi, Jawa Barat — melayani tim desain dan manufaktur di seluruh Indonesia.</p>
+          </div>
+        </div>
+
+        <div class="partner-copy">
+          <p class="kicker"><span class="mono">08</span> Partner</p>
+          <h2>Partner desain digital untuk engineer Indonesia.</h2>
+          <p class="lead">PT Hetra Teknologi Indonesia adalah partner resmi CrownCAD di Indonesia — menghadirkan lisensi, pelatihan, dan konsultasi untuk tim desain, arsitek, serta engineer.</p>
+          <ol class="story-list">
+            <li>
+              <span class="mono">01</span>
+              <div><h3>Berawal dari kebutuhan desain sehari-hari</h3><p>Kami tumbuh dari tim yang memahami workflow arsitek, drafter, dan engineer — bukan sekadar menjual lisensi software.</p></div>
+            </li>
+            <li>
+              <span class="mono">02</span>
+              <div><h3>Hari ini: satu tim, tiga layanan</h3><p>Lisensi, training, dan konsultasi berjalan dalam satu tim — jadi adopsi software tidak berhenti di pembelian.</p></div>
+            </li>
+            <li>
+              <span class="mono">03</span>
+              <div><h3>Melangkah ke cloud bersama CrownCAD</h3><p>Sebagai mitra CrownCAD di Indonesia, kami membawa workflow CAD ke browser: kolaborasi real-time, tanpa instalasi, dengan pendampingan lokal.</p></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="sect sect-light faq" id="faq">
+      <div class="wrap faq-grid">
+        <div class="faq-copy">
+          <p class="kicker"><span class="mono">09</span> FAQ</p>
+          <h2>Pertanyaan yang sering muncul.</h2>
+          <p class="lead">Belum menemukan jawabannya? Tim PT Hetra siap membantu lewat WhatsApp atau email.</p>
+          <a class="btn btn-outline" href="mailto:adam@hetratekno.com">Tanya lewat email <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg></a>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Apakah CrownCAD perlu instalasi?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Tidak. CrownCAD berjalan di browser, jadi tim Anda cukup membuka workspace tanpa memasang aplikasi berat di setiap komputer.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Format CAD apa yang bisa dibaca?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Import IGES, STEP, dan Parasolid. CrownCAD juga membaca model dari CATIA, NX, Creo, SOLIDWORKS, Inventor, Revit, dan AutoCAD, lalu bisa export ke format yang dibutuhkan tim produksi.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Bagaimana keamanan data tim kami?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Data disimpan dan ditransmisikan dengan enkripsi. Akses diatur lewat SSO/SAML dan RBAC granular, dengan audit trail serta backup harian. Platform mengikuti ISO 27001.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Apakah ada trial sebelum membeli?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Ada. Trial 30 hari bisa dimulai lewat tim PT Hetra, termasuk pendampingan singkat agar tim Anda mencoba alur kerja yang paling relevan.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Apakah tim kami bisa dilatih?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Bisa. Tersedia sesi training basic sampai advanced dengan materi berbahasa Indonesia, plus sertifikasi untuk memastikan tim siap produksi.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Apakah tersedia lisensi untuk kampus atau laboratorium?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Tersedia lisensi lab dan kelas untuk institusi pendidikan yang ingin mengajar CAD tanpa instalasi di setiap komputer.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="demo">
+      <div class="wrap cta-inner">
+        <p class="kicker"><span class="mono">10</span> Mulai</p>
+        <h2>Siap memindahkan desain ke browser?</h2>
+        <p class="lead">Mulai dari trial 30 hari atau jadwalkan demo bersama tim PT Hetra.</p>
+        <div class="cta-actions">
+          <a class="btn btn-light" href="https://wa.me/6283815512745?text=Halo%20PT%20Hetra%2C%20saya%20ingin%20memulai%20trial%2030%20hari%20CrownCAD." target="_blank" rel="noopener">Mulai trial 30 hari <svg class="i" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+          <a class="btn btn-ghost" href="mailto:adam@hetratekno.com?subject=Demo%20CrownCAD">Jadwalkan demo</a>
+        </div>
+        <ul class="cta-chips">
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Trial 30 hari</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>99,9% uptime SLA</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Data terenkripsi</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section class="sect sect-light contact" id="kontak">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div class="contact-copy">
+            <p class="kicker"><span class="mono">11</span> Kontak</p>
+            <h2>Mari bicara soal proses desain Anda.</h2>
+            <p class="lead">Tim PT Hetra Teknologi Indonesia siap membantu memilih lisensi, menjadwalkan training, atau mendampingi implementasi di tim Anda.</p>
+
+            <dl class="contact-details">
+              <div>
+                <dt><svg class="i" aria-hidden="true"><use href="#i-pin"></use></svg>Kantor</dt>
+                <dd>Plaza Summarecon Bekasi, Lantai 6<br>Jl. Bulevar Ahmad Yani, Bekasi 17143</dd>
+              </div>
+              <div>
+                <dt><svg class="i" aria-hidden="true"><use href="#i-phone"></use></svg>Telepon &amp; WhatsApp</dt>
+                <dd><a href="tel:+622138317110">021-3831-7110</a><span class="sep" aria-hidden="true">/</span><a href="https://wa.me/6283815512745" target="_blank" rel="noopener">0838-1551-2745</a></dd>
+              </div>
+              <div>
+                <dt><svg class="i" aria-hidden="true"><use href="#i-mail"></use></svg>Email</dt>
+                <dd><a href="mailto:adam@hetratekno.com">adam@hetratekno.com</a></dd>
+              </div>
+              <div>
+                <dt><svg class="i" aria-hidden="true"><use href="#i-clock"></use></svg>Jam kerja</dt>
+                <dd>Senin–Jumat, 09.00–17.00 WIB</dd>
+              </div>
+            </dl>
+
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="https://wa.me/6283815512745?text=Halo%20PT%20Hetra%2C%20saya%20ingin%20konsultasi%20CrownCAD." target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-wa"></use></svg>Chat WhatsApp</a>
+              <a class="btn btn-outline" href="mailto:adam@hetratekno.com">Kirim email</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>Minta penawaran</h3>
+            <p>Isi kebutuhan tim Anda. Formulir ini membuka WhatsApp dengan pesan yang sudah terisi.</p>
+            <form id="leadForm" novalidate>
+              <div class="field">
+                <label for="fName">Nama</label>
+                <input id="fName" name="name" type="text" autocomplete="name" required placeholder="Nama lengkap">
+              </div>
+              <div class="field">
+                <label for="fCompany">Perusahaan</label>
+                <input id="fCompany" name="company" type="text" autocomplete="organization" required placeholder="Nama perusahaan">
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="fEmail">Email</label>
+                  <input id="fEmail" name="email" type="email" autocomplete="email" required placeholder="nama@perusahaan.com">
+                </div>
+                <div class="field">
+                  <label for="fPhone">WhatsApp</label>
+                  <input id="fPhone" name="phone" type="tel" autocomplete="tel" required placeholder="08xx-xxxx-xxxx">
+                </div>
+              </div>
+              <div class="field">
+                <label for="fNeed">Kebutuhan</label>
+                <select id="fNeed" name="need">
+                  <option>Lisensi &amp; harga</option>
+                  <option>Demo produk</option>
+                  <option>Training tim</option>
+                  <option>Implementasi &amp; migrasi</option>
+                  <option>Lisensi pendidikan</option>
+                  <option>Lainnya</option>
+                </select>
+              </div>
+              <p class="form-error" id="formError" role="alert" hidden>Lengkapi nama, perusahaan, email, dan WhatsApp terlebih dahulu.</p>
+              <button class="btn btn-primary btn-block" type="submit">Kirim lewat WhatsApp <svg class="i" aria-hidden="true"><use href="#i-arrow-right"></use></svg></button>
+              <p class="form-note">Data hanya dipakai untuk merespons permintaan Anda.</p>
+            </form>
+          </div>
+        </div>
+
+        <div class="map">
+          <div class="map-head">
+            <p class="mono">Lokasi kantor / Bekasi</p>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=PT+Hetra+Teknologi+Indonesia+Plaza+Summarecon+Bekasi" target="_blank" rel="noopener">Buka di Google Maps <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg></a>
+          </div>
+          <div class="map-frame">
+            <iframe src="https://maps.google.com/maps?q=PT%20Hetra%20Teknologi%20Indonesia%20Plaza%20Summarecon%20Bekasi&amp;t=m&amp;z=16&amp;output=embed&amp;iwloc=near" title="Peta lokasi PT Hetra Teknologi Indonesia di Plaza Summarecon Bekasi" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <button class="map-cover" id="mapCover" type="button">Klik untuk menjelajah peta</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logos">
+          <img src="/wp-content/uploads/crowncad/images/brand/logo-white.png" alt="CrownCAD" width="455" height="120">
+          <span aria-hidden="true"></span>
+          <img src="/wp-content/uploads/crowncad/images/brand/hetra-white.png" alt="PT Hetra Teknologi Indonesia" width="980" height="361">
+        </div>
+        <p>Platform CAD 3D cloud-native dengan kolaborasi real-time, dual-kernel, dan kontrol versi terpusat. Didistribusikan dan didampingi PT Hetra Teknologi Indonesia.</p>
+        <address>
+          Plaza Summarecon Bekasi, Lantai 6<br>
+          Jl. Bulevar Ahmad Yani, Bekasi 17143<br>
+          <a href="tel:+622138317110">021-3831-7110</a> · <a href="mailto:adam@hetratekno.com">adam@hetratekno.com</a>
+        </address>
+      </div>
+
+      <div class="footer-col">
+        <h4>Produk</h4>
+        <ul>
+          <li><a href="#modul">Modul Inti</a></li>
+          <li><a href="#modul">Modul Profesional</a></li>
+          <li><a href="#modul">Kolaborasi</a></li>
+          <li><a href="#platform">Platform cloud</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <ul>
+          <li><a href="#layanan">After sales</a></li>
+          <li><a href="#trainer">Training</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Perusahaan</h4>
+        <ul>
+          <li><a href="#partner">Tentang PT Hetra</a></li>
+          <li><a href="https://hetratekno.com/" target="_blank" rel="noopener">hetratekno.com</a></li>
+          <li><a href="https://hetratekno.com/creo/" target="_blank" rel="noopener">PTC Creo</a></li>
+          <li><a href="https://hetratekno.com/zw3d/" target="_blank" rel="noopener">ZW3D</a></li>
+          <li><a href="https://hetratekno.com/zwcad/" target="_blank" rel="noopener">ZWCAD</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>&copy; <span id="year">2026</span> CrownCAD Indonesia · PT Hetra Teknologi Indonesia. Seluruh hak cipta dilindungi.</p>
+      <p>CrownCAD adalah merek dagang pemiliknya. PT Hetra Teknologi Indonesia adalah partner resmi di Indonesia.</p>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/6283815512745?text=Halo%20PT%20Hetra%2C%20saya%20ingin%20informasi%20CrownCAD." target="_blank" rel="noopener" aria-label="Chat WhatsApp dengan PT Hetra">
+    <span class="wa-icon"><svg class="i" aria-hidden="true"><use href="#i-wa"></use></svg></span>
+    <span class="wa-text">Chat dengan kami</span>
+  </a>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Kembali ke atas halaman">
+    <svg class="i" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galeri foto" hidden>
+    <button class="lb-close" type="button" id="lbClose" aria-label="Tutup galeri"><svg class="i" aria-hidden="true"><use href="#i-x"></use></svg></button>
+    <button class="lb-nav lb-prev" type="button" id="lbPrev" aria-label="Foto sebelumnya"><svg class="i" aria-hidden="true"><use href="#i-caret-left"></use></svg></button>
+    <figure>
+      <img id="lbImage" alt="">
+      <figcaption id="lbCount" class="mono"></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" type="button" id="lbNext" aria-label="Foto berikutnya"><svg class="i" aria-hidden="true"><use href="#i-caret-right"></use></svg></button>
+  </div>
+</div>
+
+<script>
+/* ==========================================================================
+   CrownCAD Indonesia — main.js
+   Progressive enhancement only: the page is fully readable without this file.
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  var doc = document;
+  var root = doc.documentElement;
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function $(sel, ctx) { return (ctx || doc).querySelector(sel); }
+  function $$(sel, ctx) { return Array.prototype.slice.call((ctx || doc).querySelectorAll(sel)); }
+
+  /* ---------------------------------------------------------------------
+     1. Year
+     --------------------------------------------------------------------- */
+  var yearEl = $("#year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  /* ---------------------------------------------------------------------
+     2. Scroll progress + sticky nav + to-top
+     --------------------------------------------------------------------- */
+  var scrollbar = $("#scrollbar");
+  var nav = $("#nav");
+  var toTop = $("#toTop");
+  var ticking = false;
+
+  function onScroll() {
+    var y = window.pageYOffset || root.scrollTop;
+    var max = root.scrollHeight - window.innerHeight;
+    var ratio = max > 0 ? Math.min(1, Math.max(0, y / max)) : 0;
+
+    if (scrollbar) scrollbar.style.transform = "scaleX(" + ratio + ")";
+    if (nav) nav.classList.toggle("is-stuck", y > 24);
+    if (toTop) toTop.classList.toggle("is-visible", y > 720);
+    ticking = false;
+  }
+
+  function requestScroll() {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(onScroll);
+    }
+  }
+
+  window.addEventListener("scroll", requestScroll, { passive: true });
+  window.addEventListener("resize", requestScroll);
+  onScroll();
+
+  if (toTop) {
+    toTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  }
+
+  /* ---------------------------------------------------------------------
+     3. Mobile menu
+     --------------------------------------------------------------------- */
+  var menu = $("#mobileMenu");
+  var menuBtn = $("#menuBtn");
+  var menuClose = $("#menuClose");
+  var lastFocus = null;
+
+  function menuIsOpen() {
+    return !!menu && menu.classList.contains("is-open");
+  }
+
+  function openMenu() {
+    if (!menu) return;
+    lastFocus = doc.activeElement;
+    menu.classList.add("is-open");
+    menu.setAttribute("aria-hidden", "false");
+    doc.body.classList.add("is-locked");
+    if (menuBtn) menuBtn.setAttribute("aria-expanded", "true");
+    var first = $("a, button", menu);
+    if (first) first.focus();
+  }
+
+  function closeMenu(restoreFocus) {
+    if (!menu) return;
+    menu.classList.remove("is-open");
+    menu.setAttribute("aria-hidden", "true");
+    doc.body.classList.remove("is-locked");
+    if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
+    if (restoreFocus && lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  if (menuBtn) {
+    menuBtn.addEventListener("click", function () {
+      menuIsOpen() ? closeMenu(true) : openMenu();
+    });
+  }
+  if (menuClose) menuClose.addEventListener("click", function () { closeMenu(true); });
+
+  if (menu) {
+    $$("a", menu).forEach(function (link) {
+      link.addEventListener("click", function () { closeMenu(false); });
+    });
+
+    menu.addEventListener("keydown", function (e) {
+      if (e.key !== "Tab") return;
+      var focusables = $$("a[href], button:not([disabled])", menu).filter(function (el) {
+        return el.offsetParent !== null;
+      });
+      if (!focusables.length) return;
+      var first = focusables[0];
+      var last = focusables[focusables.length - 1];
+      if (e.shiftKey && doc.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && doc.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
+  }
+
+  doc.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && menuIsOpen()) closeMenu(true);
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 1180 && menuIsOpen()) closeMenu(false);
+  });
+
+  /* ---------------------------------------------------------------------
+     4. Module tabs
+     --------------------------------------------------------------------- */
+  var tabs = $$('.tabs [role="tab"]');
+
+  function selectTab(tab, setFocus) {
+    tabs.forEach(function (t) {
+      var selected = t === tab;
+      t.classList.toggle("is-active", selected);
+      t.setAttribute("aria-selected", selected ? "true" : "false");
+      t.setAttribute("tabindex", selected ? "0" : "-1");
+
+      var panel = doc.getElementById(t.getAttribute("aria-controls"));
+      if (panel) {
+        panel.classList.toggle("is-active", selected);
+        if (selected) panel.removeAttribute("hidden");
+        else panel.setAttribute("hidden", "");
+      }
+    });
+    if (setFocus) tab.focus();
+  }
+
+  tabs.forEach(function (tab, i) {
+    tab.setAttribute("tabindex", tab.getAttribute("aria-selected") === "true" ? "0" : "-1");
+
+    tab.addEventListener("click", function () { selectTab(tab, false); });
+
+    tab.addEventListener("keydown", function (e) {
+      var next = null;
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") next = tabs[(i + 1) % tabs.length];
+      else if (e.key === "ArrowLeft" || e.key === "ArrowUp") next = tabs[(i - 1 + tabs.length) % tabs.length];
+      else if (e.key === "Home") next = tabs[0];
+      else if (e.key === "End") next = tabs[tabs.length - 1];
+      if (next) {
+        e.preventDefault();
+        selectTab(next, true);
+      }
+    });
+  });
+
+  /* ---------------------------------------------------------------------
+     5. Gallery lightbox
+     --------------------------------------------------------------------- */
+  var items = $$(".gallery-item[data-full]");
+  var lb = $("#lightbox");
+  var lbImage = $("#lbImage");
+  var lbCount = $("#lbCount");
+  var lbClose = $("#lbClose");
+  var lbPrev = $("#lbPrev");
+  var lbNext = $("#lbNext");
+  var lbIndex = 0;
+  var lbReturnFocus = null;
+
+  function pad(n) { return n < 10 ? "0" + n : String(n); }
+
+  function showSlide(index) {
+    if (!items.length) return;
+    lbIndex = (index + items.length) % items.length;
+    var item = items[lbIndex];
+    var full = item.getAttribute("data-full");
+    var img = $("img", item);
+    var alt = (img && img.getAttribute("alt")) || item.getAttribute("aria-label") || "";
+    if (lbImage) {
+      lbImage.src = full;
+      lbImage.alt = alt;
+    }
+    if (lbCount) lbCount.textContent = pad(lbIndex + 1) + " / " + pad(items.length);
+  }
+
+  function openLightbox(index, trigger) {
+    if (!lb) return;
+    lbReturnFocus = trigger || doc.activeElement;
+    showSlide(index);
+    lb.removeAttribute("hidden");
+    doc.body.classList.add("is-locked");
+    if (lbClose) lbClose.focus();
+  }
+
+  function closeLightbox() {
+    if (!lb || lb.hasAttribute("hidden")) return;
+    lb.setAttribute("hidden", "");
+    doc.body.classList.remove("is-locked");
+    if (lbImage) lbImage.removeAttribute("src");
+    if (lbReturnFocus && lbReturnFocus.focus) lbReturnFocus.focus();
+  }
+
+  items.forEach(function (item, i) {
+    item.addEventListener("click", function () { openLightbox(i, item); });
+  });
+
+  if (lbClose) lbClose.addEventListener("click", closeLightbox);
+  if (lbPrev) lbPrev.addEventListener("click", function () { showSlide(lbIndex - 1); });
+  if (lbNext) lbNext.addEventListener("click", function () { showSlide(lbIndex + 1); });
+
+  if (lb) {
+    lb.addEventListener("click", function (e) {
+      if (e.target === lb) closeLightbox();
+    });
+  }
+
+  doc.addEventListener("keydown", function (e) {
+    if (!lb || lb.hasAttribute("hidden")) return;
+    if (e.key === "Escape") { e.preventDefault(); closeLightbox(); }
+    else if (e.key === "ArrowRight") { e.preventDefault(); showSlide(lbIndex + 1); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); showSlide(lbIndex - 1); }
+  });
+
+  /* Swipe on touch devices */
+  if (lb) {
+    var startX = null;
+    lb.addEventListener("touchstart", function (e) {
+      startX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    lb.addEventListener("touchend", function (e) {
+      if (startX === null) return;
+      var dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 48) showSlide(dx < 0 ? lbIndex + 1 : lbIndex - 1);
+      startX = null;
+    }, { passive: true });
+  }
+
+  /* ---------------------------------------------------------------------
+     6. Map activation (avoid loading Google Maps before intent)
+     --------------------------------------------------------------------- */
+  var mapCover = $("#mapCover");
+  if (mapCover) {
+    mapCover.addEventListener("click", function () {
+      var frame = mapCover.closest(".map-frame");
+      if (frame) frame.classList.add("is-active");
+    });
+  }
+
+  /* ---------------------------------------------------------------------
+     7. Lead form → WhatsApp
+     --------------------------------------------------------------------- */
+  var form = $("#leadForm");
+  if (form) {
+    var error = $("#formError");
+    var nameField = $("#fName");
+    var companyField = $("#fCompany");
+    var emailField = $("#fEmail");
+    var phoneField = $("#fPhone");
+    var needField = $("#fNeed");
+
+    function mark(el, valid) {
+      if (!el) return;
+      el.classList.toggle("is-invalid", !valid);
+      el.setAttribute("aria-invalid", valid ? "false" : "true");
+    }
+
+    function validEmail(value) {
+      return /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(value.trim());
+    }
+
+    function validPhone(value) {
+      var digits = value.replace(/[^0-9]/g, "");
+      return digits.length >= 8 && digits.length <= 16;
+    }
+
+    function validate() {
+      var okName = !!nameField && nameField.value.trim().length >= 2;
+      var okCompany = !!companyField && companyField.value.trim().length >= 2;
+      var okEmail = !!emailField && validEmail(emailField.value);
+      var okPhone = !!phoneField && validPhone(phoneField.value);
+
+      mark(nameField, okName);
+      mark(companyField, okCompany);
+      mark(emailField, okEmail);
+      mark(phoneField, okPhone);
+
+      var ok = okName && okCompany && okEmail && okPhone;
+      if (error) error.hidden = ok;
+      if (!ok) {
+        var first = [nameField, companyField, emailField, phoneField].filter(function (el) {
+          return el && el.classList.contains("is-invalid");
+        })[0];
+        if (first) first.focus();
+      }
+      return ok;
+    }
+
+    [nameField, companyField, emailField, phoneField].forEach(function (el) {
+      if (!el) return;
+      el.addEventListener("input", function () {
+        if (el.classList.contains("is-invalid")) mark(el, true);
+      });
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!validate()) return;
+
+      var lines = [
+        "Halo PT Hetra, saya ingin informasi CrownCAD.",
+        "",
+        "Nama: " + nameField.value.trim(),
+        "Perusahaan: " + companyField.value.trim(),
+        "Email: " + emailField.value.trim(),
+        "WhatsApp: " + phoneField.value.trim(),
+        "Kebutuhan: " + (needField ? needField.value : "-")
+      ];
+
+      var url = "https://wa.me/6283815512745?text=" + encodeURIComponent(lines.join("\n"));
+      window.open(url, "_blank", "noopener");
+    });
+  }
+
+  /* ---------------------------------------------------------------------
+     8. Anchor links: keep keyboard focus in sync with smooth scrolling
+     --------------------------------------------------------------------- */
+  $$('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function () {
+      var id = link.getAttribute("href");
+      if (!id || id === "#") return;
+      var target = doc.querySelector(id);
+      if (!target) return;
+      target.setAttribute("tabindex", "-1");
+      setTimeout(function () { target.focus({ preventScroll: true }); }, reduceMotion ? 0 : 520);
+    });
+  });
+})();
+
+</script>

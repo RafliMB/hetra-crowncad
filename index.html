@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CrownCAD Indonesia — CAD 3D cloud untuk tim engineering | PT Hetra</title>
+  <meta name="description" content="CrownCAD berjalan di browser: part, assembly, drawing, dan kolaborasi real-time pada satu model. Didampingi PT Hetra Teknologi Indonesia, partner resmi CrownCAD.">
+  <link rel="canonical" href="https://hetra-crowncad.com/">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/images/brand/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/brand/favicon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="CrownCAD Indonesia">
+  <meta property="og:title" content="CrownCAD Indonesia — CAD 3D cloud untuk tim engineering">
+  <meta property="og:description" content="Part, assembly, drawing, dan kolaborasi real-time di browser. Partner resmi: PT Hetra Teknologi Indonesia.">
+  <meta property="og:url" content="https://hetra-crowncad.com/">
+  <meta property="og:image" content="https://hetra-crowncad.com/assets/images/brand/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CrownCAD Indonesia — CAD 3D cloud untuk tim engineering">
+  <meta name="twitter:description" content="Part, assembly, drawing, dan kolaborasi real-time di browser. Partner resmi: PT Hetra Teknologi Indonesia.">
+  <meta name="twitter:image" content="https://hetra-crowncad.com/assets/images/brand/og.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PT Hetra Teknologi Indonesia",
+    "url": "https://hetra-crowncad.com/",
+    "logo": "https://hetra-crowncad.com/assets/images/brand/logo.png",
+    "description": "Partner resmi CrownCAD di Indonesia: lisensi, implementasi, pelatihan, dan dukungan teknis CAD cloud.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plaza Summarecon Bekasi, Lantai 6, Jl. Bulevar Ahmad Yani",
+      "addressLocality": "Bekasi",
+      "postalCode": "17143",
+      "addressCountry": "ID"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+62-21-3831-7110",
+      "contactType": "sales",
+      "email": "adam@hetratekno.com",
+      "areaServed": "ID",
+      "availableLanguage": ["id", "en"]
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip" href="#main">Langsung ke konten</a>
+
+  <svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4.5 4.5 0 0 1-.7-8.95A6 6 0 0 1 18 9.5 4.25 4.25 0 0 1 17.5 18Z"/></symbol>
+    <symbol id="i-cube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5Z"/><path d="m3 13 9 5 9-5M3 17.5l9 5 9-5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0M16 5.2a3.2 3.2 0 0 1 0 5.9M17.5 14.4a5.5 5.5 0 0 1 3 5.6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v5c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6Z"/><path d="m8.5 11.5 2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m4 18 5-5 4 4 3-3 4 4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.8"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16.5v2.6a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.7 19.7 0 0 1 1.1 3.3 2 2 0 0 1 3.1 1h2.6a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L6.8 8.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+    <symbol id="i-git" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="5" r="2.2"/><circle cx="18" cy="7" r="2.2"/><circle cx="6" cy="19" r="2.2"/><path d="M6 7.2v9.6M8.2 5h4.3A3.3 3.3 0 0 1 15.8 8.3V9a3 3 0 0 0 3 3"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M8 21h8M12 16.5V21"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10" width="15" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14.5v2.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.5h7L19 8v13.5H6Z"/><path d="M13 2.5V8h6M9 12h6M9 16h6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m10 8.5 5.5 3.5-5.5 3.5Z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"/></symbol>
+    <symbol id="i-caret-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></symbol>
+    <symbol id="i-caret-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 6 6 6-6 6"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8Z"/><path d="M18 16.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8Z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.03 1.02-1.03 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.7.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9 0-3.17-1.24-6.16-3.48-8.41Z"/></symbol>
+  </svg>
+
+  <div class="scrollbar" id="scrollbar" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="CrownCAD Indonesia, kembali ke atas">
+        <img class="brand-logo--dark" src="assets/images/brand/logo.png" alt="CrownCAD" width="455" height="120">
+        <img class="brand-logo--light" src="assets/images/brand/logo-white-455.webp" alt="CrownCAD" width="455" height="120">
+        <span class="brand-sep" aria-hidden="true"></span>
+        <img class="brand-hetra brand-hetra--dark" src="assets/images/brand/hetra-dark.webp" alt="PT Hetra Teknologi Indonesia" width="240" height="240">
+        <img class="brand-hetra brand-hetra--light" src="assets/images/brand/hetra-white.png" alt="PT Hetra Teknologi Indonesia" width="240" height="240">
+      </a>
+
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#mengapa">Industri</a>
+        <a href="#platform">Platform</a>
+        <a href="#modul">Modul</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#trainer">Trainer</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-sm btn-primary" href="https://wa.me/6283815512745?text=Halo%20PT%20Hetra%2C%20saya%20ingin%20mencoba%20CrownCAD%20untuk%20tim%20kami." target="_blank" rel="noopener">
+          Coba gratis <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg>
+        </a>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg class="i" aria-hidden="true"><use href="#i-menu"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-head">
+      <a class="brand" href="#top" aria-label="CrownCAD Indonesia">
+        <img src="assets/images/brand/logo-white.png" alt="CrownCAD" width="455" height="120">
+      </a>
+      <button class="menu-btn" id="menuClose" type="button" aria-label="Tutup menu">
+        <svg class="i" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+    <nav class="mobile-links" aria-label="Navigasi seluler">
+      <a href="#mengapa"><span>01</span>Industri</a>
+      <a href="#platform"><span>02</span>Platform</a>
+      <a href="#modul"><span>03</span>Modul</a>
+      <a href="#alur"><span>04</span>Alur kerja</a>
+      <a href="#layanan"><span>05</span>Layanan</a>
+      <a href="#trainer"><span>06</span>Trainer</a>
+      <a href="#galeri"><span>07</span>Galeri</a>
+      <a href="#partner"><span>08</span>Partner</a>
+      <a href="#faq"><span>09</span>FAQ</a>
+      <a href="#kontak"><span>10</span>Kontak</a>
+    </nav>
+    <div class="mobile-foot">
+      <a class="btn btn-primary" href="https://wa.me/6283815512745?text=Halo%20PT%20Hetra%2C%20saya%20ingin%20mencoba%20CrownCAD." target="_blank" rel="noopener">Coba gratis</a>
+      <a class="btn btn-outline" href="mailto:adam@hetratekno.com">adam@hetratekno.com</a>
+      <p>PT Hetra Teknologi Indonesia<br>Plaza Summarecon Bekasi, Lantai 6</p>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="wrap hero-inner">
+        <div class="hero-copy" data-enter>
+          <p class="eyebrow">CAD cloud-native · Partner resmi di Indonesia</p>
+          <h1>CAD 3D cloud untuk tim engineering Indonesia.</h1>
+          <p class="hero-sub">CrownCAD berjalan di browser: part, assembly, drawing, dan kolaborasi real-time pada satu model. PT Hetra mendampingi lisensi, implementasi, dan pelatihan tim Anda.</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="https://wa.me/6283815512745?text=Halo%20PT%20Hetra%2C%20saya%20ingin%20mencoba%20CrownCAD%20gratis%2030%20hari%20untuk%20tim%20kami." target="_blank" rel="noopener">
+              Coba gratis<svg class="i" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+            </a>
+            <a class="btn btn-ghost" href="#kontak">
+              <svg class="i" aria-hidden="true"><use href="#i-play"></use></svg> Jadwalkan demo
+            </a>
+          </div>
+        </div>
+
+        <!-- <aside class="hero-aside" aria-label="Angka utama CrownCAD">
+          <ul class="hero-facts">
+            <li><strong>500.000+</strong><span>pengguna terdaftar</span></li>
+            <li><strong>10.000+</strong><span>perusahaan</span></li>
+            <li><strong>300.000+</strong><span>part per assembly</span></li>
+          </ul>
+        </aside> -->
+      </div>
+
+      <div class="hero-bg" aria-hidden="true">
+        <img src="assets/images/hero/hero-bg-1440.webp"
+             srcset="assets/images/hero/hero-bg-960.webp 960w, assets/images/hero/hero-bg-1440.webp 1440w, assets/images/hero/hero-bg-1920.webp 1920w"
+             sizes="100vw" width="1920" height="1080" alt=""
+             loading="eager" decoding="async" fetchpriority="high">
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" aria-label="CrownCAD dalam angka">
+      <div class="wrap stats-inner">
+        <p class="stats-label mono">Platform yang dipakai tim desain di 10.000+ perusahaan</p>
+        <dl class="stats-grid">
+          <div><dt>Pengguna terdaftar</dt><dd>500.000<span>+</span></dd></div>
+          <div><dt>Perusahaan</dt><dd>10.000<span>+</span></dd></div>
+          <div><dt>Part per assembly</dt><dd>300.000<span>+</span></dd></div>
+          <div><dt>Uptime SLA</dt><dd>99,9<span>%</span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- INDUSTRI -->
+    <section class="sect sect-light industries" id="mengapa">
+      <div class="wrap">
+        <div class="sect-head">
+          <p class="kicker"><span class="mono">01</span> Mengapa CrownCAD</p>
+          <h2>Dipercaya di berbagai industri.</h2>
+          <p class="lead">Satu platform untuk tim yang membuat produk nyata — dari komponen presisi sampai lini produksi.</p>
+        </div>
+
+        <div class="industry-grid">
+          <article class="industry">
+            <figure class="industry-media">
+              <img src="assets/images/industries/aerospace-assembly-960.webp"
+                   srcset="assets/images/industries/aerospace-assembly-480.webp 480w, assets/images/industries/aerospace-assembly-960.webp 960w, assets/images/industries/aerospace-assembly-1600.webp 1600w"
+                   sizes="(min-width: 1024px) 46vw, 100vw" width="1600" height="1065" alt="Teknisi merakit struktur pesawat di lini produksi" loading="lazy" decoding="async">
+              <span class="media-index mono">01</span>
+            </figure>
+            <div class="industry-body">
+              <h3>Aerospace</h3>
+              <p>Desain komponen dan struktur pesawat menuntut presisi tinggi serta kolaborasi lintas tim.</p>
+              <ul class="ticks">
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Part &amp; assembly kompleks</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Review desain real-time</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Kompatibilitas format CAD</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Manajemen revisi terpusat</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="industry">
+            <figure class="industry-media">
+              <img src="assets/images/industries/machinery-1200.webp"
+                   sizes="(min-width: 1024px) 46vw, 100vw" width="1200" height="800" alt="Gambar teknik mesin dan jangka sorong" loading="lazy" decoding="async">
+              <span class="media-index mono">02</span>
+            </figure>
+            <div class="industry-body">
+              <h3>Machinery</h3>
+              <p>Perancangan mesin dan peralatan industri dengan geometri kompleks serta banyak komponen.</p>
+              <ul class="ticks">
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Sheet metal &amp; weldment</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Library part GB/ISO</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Assembly 300K+ part</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Drawing otomatis</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="industry">
+            <figure class="industry-media">
+              <img src="assets/images/industries/transportation-1200.webp"
+                   sizes="(min-width: 1024px) 46vw, 100vw" width="1200" height="900" alt="Deretan mobil di dealer otomotif" loading="lazy" decoding="async">
+              <span class="media-index mono">03</span>
+            </figure>
+            <div class="industry-body">
+              <h3>Automotive</h3>
+              <p>Pengembangan kendaraan dan komponen otomotif dari konsep hingga siap produksi.</p>
+              <ul class="ticks">
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Surface &amp; solid modeling</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Drawing 2D otomatis</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Manajemen versi</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Approval workflow</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="industry">
+            <figure class="industry-media">
+              <img src="assets/images/industries/education-1200.webp"
+                   sizes="(min-width: 1024px) 46vw, 100vw" width="1200" height="747" alt="Suasana kelas dengan guru dan siswa" loading="lazy" decoding="async">
+              <span class="media-index mono">04</span>
+            </figure>
+            <div class="industry-body">
+              <h3>Education</h3>
+              <p>Mendukung pembelajaran CAD di kampus dan sekolah kejuruan tanpa instalasi berat.</p>
+              <ul class="ticks">
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Akses lewat browser</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Lisensi lab &amp; kelas</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Kolaborasi tugas</li>
+                <li><svg class="i" aria-hidden="true"><use href="#i-check"></use></svg>Tanpa spek tinggi</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATFORM -->
+    <section class="sect sect-dark platform" id="platform">
+      <div class="wrap platform-grid">
+        <div class="platform-copy">
+          <p class="kicker"><span class="mono">02</span> Platform cloud</p>
+          <h2>Bekerja dari mana saja, kapan saja.</h2>
+          <p class="lead">Platform cloud-native yang memungkinkan tim Anda berkolaborasi secara real-time dari lokasi berbeda — satu model, satu versi kebenaran.</p>
+
+          <ul class="feature-list">
+            <li>
+              <span class="feature-icon"><svg class="i" aria-hidden="true"><use href="#i-users"></use></svg></span>
+              <div><h3>Multi-user real-time</h3><p>Beberapa engineer membuka dan mengedit model yang sama secara bersamaan.</p></div>
+            </li>
+            <li>
+              <span class="feature-icon"><svg class="i" aria-hidden="true"><use href="#i-git"></use></svg></span>
+              <div><h3>Versioning terpusat</h3><p>Riwayat revisi, branch, dan rollback tanpa file salinan yang berserakan.</p></div>
+            </li>
+            <li>
+              <span class="feature-icon"><svg class="i" aria-hidden="true"><use href="#i-shield"></use></svg></span>
+              <div><h3>Aman untuk tim</h3><p>SSO/SAML, RBAC granular, audit trail, dan data terenkripsi.</p></div>
+            </li>
+            <li>
+              <span class="feature-icon"><svg class="i" aria-hidden="true"><use href="#i-monitor"></use></svg></span>
+              <div><h3>Lintas perangkat</h3><p>Desain dan review di PC, tablet, maupun smartphone.</p></div>
+            </li>
+          </ul>
+
+          <div class="chips">
+            <span>99,9% uptime SLA</span><span>ISO 27001</span><span>Backup harian</span><span>DGM + DCS</span>
+          </div>
+        </div>
+
+        <figure class="platform-figure">
+          <div class="figure-frame">
+            <img src="assets/images/collaboration-management/collaboration-960.webp"
+                 srcset="assets/images/collaboration-management/collaboration-480.webp 480w, assets/images/collaboration-management/collaboration-960.webp 960w, assets/images/collaboration-management/collaboration-1020.webp 1020w"
+                 sizes="(min-width: 1024px) 50vw, 100vw" width="1020" height="554"
+                 alt="CrownCAD terbuka di monitor, laptop, tablet, dan smartphone dengan model yang sama" loading="lazy" decoding="async">
+            <span class="figure-tag mono">CrownCAD / Project view</span>
+          </div>
+          <figcaption>Model assembly yang sama di empat perangkat, dengan riwayat versi dan panel kolaborasi.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- STATEMENT -->
+    <section class="statement" aria-label="Prinsip version control">
+      <div class="wrap statement-inner">
+        <p class="mono statement-kicker">Version control terpusat</p>
+        <p class="statement-line">Satu model. Satu versi kebenaran.</p>
+        <p class="statement-sub">Riwayat revisi, branch, dan rollback tanpa file salinan yang berserakan.</p>
+      </div>
+    </section>
+
+    <!-- MODUL -->
+    <section class="sect sect-light modules" id="modul">
+      <div class="wrap">
+        <div class="sect-head">
+          <p class="kicker"><span class="mono">03</span> Modul</p>
+          <h2>Kemampuan inti untuk alur kerja CAD Anda.</h2>
+          <p class="lead">Modul yang bisa dinyalakan sesuai kebutuhan tim — dari sketching sampai manajemen versi.</p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Kategori modul">
+          <button class="tab is-active" id="tab-core" role="tab" aria-selected="true" aria-controls="panel-core" type="button">Modul Inti <span class="mono">05</span></button>
+          <button class="tab" id="tab-pro" role="tab" aria-selected="false" aria-controls="panel-pro" type="button">Profesional <span class="mono">04</span></button>
+          <button class="tab" id="tab-collab" role="tab" aria-selected="false" aria-controls="panel-collab" type="button">Kolaborasi <span class="mono">02</span></button>
+        </div>
+
+        <div class="panel is-active" id="panel-core" role="tabpanel" aria-labelledby="tab-core" tabindex="0">
+          <div class="module-grid">
+            <article class="module">
+              <figure><img src="assets/images/core-modeling/sketch-960.webp" srcset="assets/images/core-modeling/sketch-480.webp 480w, assets/images/core-modeling/sketch-960.webp 960w, assets/images/core-modeling/sketch-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Sketch 2D dengan dimensi dan constraint" loading="lazy" decoding="async"><span class="module-index mono">01</span></figure>
+              <div class="module-body">
+                <h3>Sketching</h3>
+                <p>Polyline, busur, slot, dan spline dengan dimensi cepat serta constraint geometris. Fillet, chamfer, trim, dan offset dalam satu kanvas.</p>
+              </div>
+            </article>
+            <article class="module">
+              <figure><img src="assets/images/core-modeling/part-960.webp" srcset="assets/images/core-modeling/part-480.webp 480w, assets/images/core-modeling/part-960.webp 960w, assets/images/core-modeling/part-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Model part mesin 3D" loading="lazy" decoding="async"><span class="module-index mono">02</span></figure>
+              <div class="module-body">
+                <h3>Desain Part</h3>
+                <p>Solid parametrik berbasis fitur, surface dan mesh hybrid, serta direct editing untuk model parametrik maupun non-parametrik.</p>
+              </div>
+            </article>
+            <article class="module">
+              <figure><img src="assets/images/core-modeling/assembly-960.webp" srcset="assets/images/core-modeling/assembly-480.webp 480w, assets/images/core-modeling/assembly-960.webp 960w, assets/images/core-modeling/assembly-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Assembly dengan banyak komponen" loading="lazy" decoding="async"><span class="module-index mono">03</span></figure>
+              <div class="module-body">
+                <h3>Desain Assembly</h3>
+                <p>Top-down atau bottom-up, pemasangan komponen yang efisien, sinkron real-time antara assembly dan part, plus cek interferensi.</p>
+              </div>
+            </article>
+            <article class="module">
+              <figure><img src="assets/images/core-modeling/drawing-960.webp" srcset="assets/images/core-modeling/drawing-480.webp 480w, assets/images/core-modeling/drawing-960.webp 960w, assets/images/core-modeling/drawing-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Drawing 2D otomatis dari model 3D" loading="lazy" decoding="async"><span class="module-index mono">04</span></figure>
+              <div class="module-body">
+                <h3>Drawing</h3>
+                <p>Proyeksi otomatis dari model 3D, drafting sesuai standar internasional, dimensi otomatis, dan model 2D–3D yang tetap sinkron.</p>
+              </div>
+            </article>
+            <article class="module">
+              <figure><img src="assets/images/core-modeling/compatibility-960.webp" srcset="assets/images/core-modeling/compatibility-480.webp 480w, assets/images/core-modeling/compatibility-960.webp 960w, assets/images/core-modeling/compatibility-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Kompatibilitas format CAD" loading="lazy" decoding="async"><span class="module-index mono">05</span></figure>
+              <div class="module-body">
+                <h3>Kompatibilitas Data</h3>
+                <p>Import IGES, STEP, dan Parasolid. Baca model CATIA, NX, Creo, SOLIDWORKS, Inventor, Revit, serta AutoCAD — lalu export kembali sesuai kebutuhan.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="panel" id="panel-pro" role="tabpanel" aria-labelledby="tab-pro" tabindex="0" hidden>
+          <div class="module-grid">
+            <article class="module">
+              <figure><img src="assets/images/professional-modules/sheet-metal-module-960.webp" srcset="assets/images/professional-modules/sheet-metal-module-480.webp 480w, assets/images/professional-modules/sheet-metal-module-960.webp 960w, assets/images/professional-modules/sheet-metal-module-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Modul sheet metal" loading="lazy" decoding="async"><span class="module-index mono">01</span></figure>
+              <div class="module-body">
+                <h3>Sheet Metal</h3>
+                <p>Fitur sheet metal dasar seperti louver dan stamping, dengan unfolding dan folding cepat untuk alur desain ke produksi.</p>
+              </div>
+            </article>
+            <article class="module">
+              <figure><img src="assets/images/professional-modules/weldment-module-960.webp" srcset="assets/images/professional-modules/weldment-module-480.webp 480w, assets/images/professional-modules/weldment-module-960.webp 960w, assets/images/professional-modules/weldment-module-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Modul weldment" loading="lazy" decoding="async"><span class="module-index mono">02</span></figure>
+              <div class="module-body">
+                <h3>Weldment</h3>
+                <p>Library profil struktural standar, sketch path 2D dan 3D, modifikasi gaya koneksi sudut, dan export cut list.</p>
+              </div>
+            </article>
+            <article class="module">
+              <figure><img src="assets/images/professional-modules/mbd-960.webp" srcset="assets/images/professional-modules/mbd-480.webp 480w, assets/images/professional-modules/mbd-960.webp 960w, assets/images/professional-modules/mbd-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Model based definition dengan anotasi 3D" loading="lazy" decoding="async"><span class="module-index mono">03</span></figure>
+              <div class="module-body">
+                <h3>MBD</h3>
+                <p>Anotasi dan catatan 3D langsung, transfer PMI ke drawing 2D, serta import data MBD dari model eksternal.</p>
+              </div>
+            </article>
+            <article class="module">
+              <figure><img src="assets/images/professional-modules/animation-960.webp" srcset="assets/images/professional-modules/animation-480.webp 480w, assets/images/professional-modules/animation-960.webp 960w, assets/images/professional-modules/animation-1020.webp 1020w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1020" height="554" alt="Animasi mekanisme assembly" loading="lazy" decoding="async"><span class="module-index mono">04</span></figure>
+              <div class="module-body">
+                <h3>Animasi</h3>
+                <p>Simulasi gerakan mekanisme dari constraint assembly, keyframe berbasis waktu, dan output video AVI/MP4.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="panel" id="panel-collab" role="tabpanel" aria-labelledby="tab-collab" tabindex="0" hidden>
+          <div class="module-grid module-grid-2">
+            <article class="module">
+              <figure><img src="assets/images/collaboration-management/version-management-960.webp" srcset="assets/images/collaboration-management/version-management-480.webp 480w, assets/images/collaboration-management/version-management-960.webp 960w, assets/images/collaboration-management/version-management-1020.webp 1020w" sizes="(min-width: 1024px) 50vw, 100vw" width="1020" height="554" alt="Panel manajemen versi CrownCAD" loading="lazy" decoding="async"><span class="module-index mono">01</span></figure>
+              <div class="module-body">
+                <h3>Manajemen Versi</h3>
+                <p>Penyimpanan dan transmisi cloud terenkripsi, riwayat editing lengkap dengan rollback, serta kontrol versi lewat node dan branch.</p>
+              </div>
+            </article>
+            <article class="module">
+              <figure><img src="assets/images/collaboration-management/collaboration-960.webp" srcset="assets/images/collaboration-management/collaboration-480.webp 480w, assets/images/collaboration-management/collaboration-960.webp 960w, assets/images/collaboration-management/collaboration-1020.webp 1020w" sizes="(min-width: 1024px) 50vw, 100vw" width="1020" height="554" alt="Kolaborasi CrownCAD di beberapa perangkat" loading="lazy" decoding="async"><span class="module-index mono">02</span></figure>
+              <div class="module-body">
+                <h3>Kolaborasi</h3>
+                <p>Multi-user pada model yang sama, tim dengan izin dan peran granular, review di PC, tablet, dan smartphone — tanpa transfer file bolak-balik.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALUR -->
+    <section class="sect sect-dark flow" id="alur">
+      <div class="wrap">
+        <div class="sect-head">
+          <p class="kicker"><span class="mono">04</span> Alur kerja</p>
+          <h2>Dari sketch ke drawing, tanpa ekspor ulang.</h2>
+          <p class="lead">Empat tahap yang saling terhubung. Perubahan di satu tahap ikut terbawa ke tahap berikutnya.</p>
+        </div>
+
+        <ol class="flow-steps">
+          <li class="step">
+            <span class="step-num mono">01</span>
+            <div><h3>Sketch</h3><p>Dimensi cepat, constraint geometris, dan alat editing fillet, chamfer, trim, offset.</p></div>
+          </li>
+          <li class="step">
+            <span class="step-num mono">02</span>
+            <div><h3>Part</h3><p>Solid parametrik berbasis fitur, surface/mesh hybrid, dan direct editing.</p></div>
+          </li>
+          <li class="step">
+            <span class="step-num mono">03</span>
+            <div><h3>Assembly</h3><p>Top-down atau bottom-up, sinkron real-time, dan pemeriksaan interferensi.</p></div>
+          </li>
+          <li class="step">
+            <span class="step-num mono">04</span>
+            <div><h3>Drawing</h3><p>Proyeksi otomatis, dimensi otomatis, dan model 2D–3D yang tetap sinkron.</p></div>
+          </li>
+        </ol>
+
+        <!-- <figure class="flow-figure">
+          <img src="assets/images/core-modeling/part-1020.webp"
+               srcset="assets/images/core-modeling/part-480.webp 480w, assets/images/core-modeling/part-960.webp 960w, assets/images/core-modeling/part-1020.webp 1020w"
+               sizes="(min-width: 1024px) 58vw, 100vw" width="1020" height="554"
+               alt="Model part hasil pemodelan parametrik di CrownCAD" loading="lazy" decoding="async">
+          <div class="flow-callouts" aria-hidden="true">
+            <span class="mono">PARAMETRIC / FEATURE TREE</span>
+            <span class="mono">REAL-TIME SYNC</span>
+          </div>
+        </figure> -->
+      </div>
+    </section>
+
+    <!-- LAYANAN -->
+    <section class="sect sect-light support" id="layanan">
+      <div class="wrap">
+        <div class="sect-head wide">
+          <div>
+            <p class="kicker"><span class="mono">05</span> After sales</p>
+            <h2>Setelah lisensi aktif, kami tetap mendampingi.</h2>
+          </div>  
+          <p class="lead">Adopsi CAD cloud bukan sekadar ganti software. Kami bantu tim Anda dari implementasi awal, pelatihan, sampai operasional harian.</p>
+        </div>
+
+        <div class="support-grid">
+          <article class="support-card">
+            <figure class="support-media">
+              <img src="assets/images/benefits/onboarding-960.webp"
+                   srcset="assets/images/benefits/onboarding-480.webp 480w, assets/images/benefits/onboarding-960.webp 960w, assets/images/benefits/onboarding-1000.webp 1000w"
+                   sizes="(min-width: 1200px) 30vw, (min-width: 721px) 45vw, 100vw"
+                   width="1000" height="625" alt="Diskusi implementasi dan onboarding CrownCAD bersama tim pelanggan" loading="lazy" decoding="async">
+            </figure>
+            <span class="support-num mono">01</span>
+            <h3>Onboarding &amp; Implementasi</h3>
+            <p>Setup workspace, migrasi data dari CAD lama, dan uji coba alur kerja sebelum rollout ke seluruh tim.</p>
+          </article>
+          <article class="support-card">
+            <figure class="support-media">
+              <img src="assets/images/benefits/training-960.webp"
+                   srcset="assets/images/benefits/training-480.webp 480w, assets/images/benefits/training-960.webp 960w, assets/images/benefits/training-1000.webp 1000w"
+                   sizes="(min-width: 1200px) 30vw, (min-width: 721px) 45vw, 100vw"
+                   width="1000" height="625" alt="Sesi pelatihan CrownCAD bersama puluhan peserta dari tim pelanggan" loading="lazy" decoding="async">
+            </figure>
+            <span class="support-num mono">02</span>
+            <h3>Pelatihan Tim &amp; Sertifikasi</h3>
+            <p>Training basic sampai advanced, materi berbahasa Indonesia, plus sertifikasi untuk memastikan tim siap produksi.</p>
+          </article>
+          <article class="support-card">
+            <figure class="support-media">
+              <img src="assets/images/benefits/support-960.webp"
+                   srcset="assets/images/benefits/support-480.webp 480w, assets/images/benefits/support-960.webp 960w, assets/images/benefits/support-1000.webp 1000w"
+                   sizes="(min-width: 1200px) 30vw, (min-width: 721px) 45vw, 100vw"
+                   width="1000" height="625" alt="Pendampingan teknis CrownCAD langsung di lokasi pelanggan" loading="lazy" decoding="async">
+            </figure>
+            <span class="support-num mono">03</span>
+            <h3>Dukungan Teknis Lokal</h3>
+            <p>Tim support Indonesia dengan respons di bawah 1×24 jam pada hari kerja dan jalur eskalasi ke engineer produk.</p>
+          </article>
+          <article class="support-card">
+            <figure class="support-media">
+              <img src="assets/images/benefits/updates-960.webp"
+                   srcset="assets/images/benefits/updates-480.webp 480w, assets/images/benefits/updates-960.webp 960w, assets/images/benefits/updates-1000.webp 1000w"
+                   sizes="(min-width: 1200px) 30vw, (min-width: 721px) 45vw, 100vw"
+                   width="1000" height="625" alt="Sesi demo fitur dan pembaruan terbaru platform CrownCAD" loading="lazy" decoding="async">
+            </figure>
+            <span class="support-num mono">04</span>
+            <h3>Update &amp; Fitur Baru</h3>
+            <p>Rilis fitur baru, perbaikan bug, dan patch keamanan langsung aktif tanpa instalasi ulang.</p>
+          </article>
+          <article class="support-card">
+            <figure class="support-media">
+              <img src="assets/images/benefits/consulting-960.webp"
+                   srcset="assets/images/benefits/consulting-480.webp 480w, assets/images/benefits/consulting-960.webp 960w, assets/images/benefits/consulting-1000.webp 1000w"
+                   sizes="(min-width: 1200px) 30vw, (min-width: 721px) 45vw, 100vw"
+                   width="1000" height="625" alt="Konsultasi best practice dan review workflow CAD bersama tim" loading="lazy" decoding="async">
+            </figure>
+            <span class="support-num mono">05</span>
+            <h3>Konsultasi &amp; Best Practice</h3>
+            <p>Review workflow CAD, optimasi model besar, dan rekomendasi standar drafting sesuai industri Anda.</p>
+          </article>
+          <article class="support-card">
+            <figure class="support-media">
+              <img src="assets/images/benefits/sla-960.webp"
+                   srcset="assets/images/benefits/sla-480.webp 480w, assets/images/benefits/sla-960.webp 960w, assets/images/benefits/sla-1000.webp 1000w"
+                   sizes="(min-width: 1200px) 30vw, (min-width: 721px) 45vw, 100vw"
+                   width="1000" height="625" alt="Dokumentasi kerja sama layanan CrownCAD dengan mitra pelanggan" loading="lazy" decoding="async">
+            </figure>
+            <span class="support-num mono">06</span>
+            <h3>SLA &amp; Jaminan Layanan</h3>
+            <p>Uptime 99,9%, backup harian, dan audit trail lengkap — dengan perjanjian layanan yang jelas dan terukur.</p>
+          </article>
+        </div>
+
+        <div class="sla-bar">
+          <div>
+            <h3>Setiap implementasi sudah termasuk dukungan after-sales.</h3>
+            <p>Pendampingan penuh — dari hari pertama sampai tim Anda mandiri.</p>
+          </div>
+          <ul class="sla-list">
+            <li><span></span>Onboarding 1-on-1</li>
+            <li><span></span>Training</li>
+            <li><span></span>Respons maks. 1×24 jam</li>
+            <li><span></span>Update cloud gratis</li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/6283815512745?text=Halo%20PT%20Hetra%2C%20saya%20ingin%20menjadwalkan%20konsultasi%20implementasi%20CrownCAD." target="_blank" rel="noopener">Jadwalkan konsultasi <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAINER -->
+    <section class="sect sect-dark trainers" id="trainer">
+      <div class="wrap">
+        <div class="sect-head wide">
+          <div>
+            <p class="kicker"><span class="mono">06</span> Tim</p>
+            <h2>Trainer berpengalaman.</h2>
+          </div>
+          <p class="lead">Kenali tim trainer yang mendampingi tim Anda mengadopsi CrownCAD — dari dasar sampai alur kerja produksi.</p>
+        </div>
+
+        <div class="trainer-grid">
+          <figure class="trainer">
+            <img src="assets/images/trainer/ardias-650.webp" srcset="assets/images/trainer/ardias-480.webp 480w, assets/images/trainer/ardias-650.webp 650w" sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 45vw" width="650" height="1004" alt="Ardias, trainer CrownCAD" loading="lazy" decoding="async">
+            <figcaption><strong>Ardias</strong><span>Trainer CrownCAD</span></figcaption>
+          </figure>
+          <figure class="trainer">
+            <img src="assets/images/trainer/aryo-960.webp" srcset="assets/images/trainer/aryo-480.webp 480w, assets/images/trainer/aryo-960.webp 960w, assets/images/trainer/aryo-1086.webp 1086w" sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 45vw" width="1086" height="1448" alt="Aryo, trainer CrownCAD" loading="lazy" decoding="async">
+            <figcaption><strong>Aryo</strong><span>Trainer CrownCAD</span></figcaption>
+          </figure>
+          <figure class="trainer">
+            <img src="assets/images/trainer/firas-650.webp" srcset="assets/images/trainer/firas-480.webp 480w, assets/images/trainer/firas-650.webp 650w" sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 45vw" width="650" height="1004" alt="Firas, trainer CrownCAD" loading="lazy" decoding="async">
+            <figcaption><strong>Firas</strong><span>Trainer CrownCAD</span></figcaption>
+          </figure>
+          <figure class="trainer">
+            <img src="assets/images/trainer/zefi-650.webp" srcset="assets/images/trainer/zefi-480.webp 480w, assets/images/trainer/zefi-650.webp 650w" sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 45vw" width="650" height="1004" alt="Zefi, trainer CrownCAD" loading="lazy" decoding="async">
+            <figcaption><strong>Zefi</strong><span>Trainer CrownCAD</span></figcaption>
+          </figure>
+        </div>
+        <p class="trainer-note">Sesi in-house dan online, materi berbahasa Indonesia. <a href="https://wa.me/6283815512745?text=Halo%20PT%20Hetra%2C%20saya%20ingin%20informasi%20jadwal%20training%20CrownCAD." target="_blank" rel="noopener">Tanyakan jadwal training <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg></a></p>
+      </div>
+    </section>
+
+    <!-- GALERI -->
+    <section class="sect sect-light gallery" id="galeri">
+      <div class="wrap">
+        <div class="sect-head wide">
+          <div>
+            <p class="kicker"><span class="mono">07</span> Galeri</p>
+            <h2>Momen bersama pengguna.</h2>
+          </div>
+          <p class="lead">Sesi pelatihan, workshop, dan kunjungan industri bersama tim engineering di berbagai perusahaan serta institusi pendidikan di Indonesia.</p>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <button class="gallery-item span-2" type="button" data-full="assets/images/gallery/gallery-13-1600.webp" aria-label="Buka foto 1 dari 12">
+            <img src="assets/images/gallery/gallery-13-960.webp" srcset="assets/images/gallery/gallery-13-480.webp 480w, assets/images/gallery/gallery-13-960.webp 960w, assets/images/gallery/gallery-13-1600.webp 1600w" sizes="(min-width: 1024px) 50vw, 100vw" width="1600" height="1200" alt="Sesi training CrownCAD bersama tim engineering" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="assets/images/gallery/gallery-02-960.webp" aria-label="Buka foto 2 dari 12">
+            <img src="assets/images/gallery/gallery-02-960.webp" srcset="assets/images/gallery/gallery-02-480.webp 480w, assets/images/gallery/gallery-02-960.webp 960w" sizes="(min-width: 1024px) 25vw, 50vw" width="960" height="1280" alt="Peserta workshop CrownCAD" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="assets/images/gallery/gallery-05-1280.webp" aria-label="Buka foto 3 dari 12">
+            <img src="assets/images/gallery/gallery-05-960.webp" srcset="assets/images/gallery/gallery-05-480.webp 480w, assets/images/gallery/gallery-05-960.webp 960w, assets/images/gallery/gallery-05-1280.webp 1280w" sizes="(min-width: 1024px) 25vw, 50vw" width="1280" height="960" alt="Tim desain berdiskusi di depan layar" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="assets/images/gallery/gallery-14-1600.webp" aria-label="Buka foto 4 dari 12">
+            <img src="assets/images/gallery/gallery-14-960.webp" srcset="assets/images/gallery/gallery-14-480.webp 480w, assets/images/gallery/gallery-14-960.webp 960w, assets/images/gallery/gallery-14-1600.webp 1600w" sizes="(min-width: 1024px) 50vw, 100vw" width="1600" height="900" alt="Sesi presentasi CrownCAD" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="assets/images/gallery/gallery-15-1600.webp" aria-label="Buka foto 5 dari 12">
+            <img src="assets/images/gallery/gallery-15-960.webp" srcset="assets/images/gallery/gallery-15-480.webp 480w, assets/images/gallery/gallery-15-960.webp 960w, assets/images/gallery/gallery-15-1600.webp 1600w" sizes="(min-width: 1024px) 25vw, 50vw" width="1600" height="1200" alt="Kunjungan industri bersama pengguna CrownCAD" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="assets/images/gallery/gallery-16-1600.webp" aria-label="Buka foto 6 dari 12">
+            <img src="assets/images/gallery/gallery-16-960.webp" srcset="assets/images/gallery/gallery-16-480.webp 480w, assets/images/gallery/gallery-16-960.webp 960w, assets/images/gallery/gallery-16-1600.webp 1600w" sizes="(min-width: 1024px) 25vw, 50vw" width="1600" height="1200" alt="Peserta pelatihan CrownCAD" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="assets/images/gallery/gallery-17-1600.webp" aria-label="Buka foto 7 dari 12">
+            <img src="assets/images/gallery/gallery-17-960.webp" srcset="assets/images/gallery/gallery-17-480.webp 480w, assets/images/gallery/gallery-17-960.webp 960w, assets/images/gallery/gallery-17-1600.webp 1600w" sizes="(min-width: 1024px) 25vw, 50vw" width="1600" height="1200" alt="Workshop CrownCAD di kampus" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="assets/images/gallery/gallery-19-1600.webp" aria-label="Buka foto 8 dari 12">
+            <img src="assets/images/gallery/gallery-19-960.webp" srcset="assets/images/gallery/gallery-19-480.webp 480w, assets/images/gallery/gallery-19-960.webp 960w, assets/images/gallery/gallery-19-1600.webp 1600w" sizes="(min-width: 1024px) 25vw, 50vw" width="1600" height="1200" alt="Diskusi tim engineering" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="assets/images/gallery/gallery-20-1600.webp" aria-label="Buka foto 9 dari 12">
+            <img src="assets/images/gallery/gallery-20-960.webp" srcset="assets/images/gallery/gallery-20-480.webp 480w, assets/images/gallery/gallery-20-960.webp 960w, assets/images/gallery/gallery-20-1600.webp 1600w" sizes="(min-width: 1024px) 25vw, 50vw" width="1600" height="1200" alt="Sesi tanya jawab CrownCAD" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="assets/images/gallery/gallery-12-1280.webp" aria-label="Buka foto 10 dari 12">
+            <img src="assets/images/gallery/gallery-12-960.webp" srcset="assets/images/gallery/gallery-12-480.webp 480w, assets/images/gallery/gallery-12-960.webp 960w, assets/images/gallery/gallery-12-1280.webp 1280w" sizes="(min-width: 1024px) 25vw, 50vw" width="1280" height="960" alt="Pengguna CrownCAD di lokasi pelanggan" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item" type="button" data-full="assets/images/gallery/gallery-24-1536.webp" aria-label="Buka foto 11 dari 12">
+            <img src="assets/images/gallery/gallery-24-960.webp" srcset="assets/images/gallery/gallery-24-480.webp 480w, assets/images/gallery/gallery-24-960.webp 960w, assets/images/gallery/gallery-24-1536.webp 1536w" sizes="(min-width: 1024px) 25vw, 50vw" width="1536" height="1224" alt="Tim CrownCAD Indonesia" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+          <button class="gallery-item span-2" type="button" data-full="assets/images/gallery/gallery-01-1280.webp" aria-label="Buka foto 12 dari 12">
+            <img src="assets/images/gallery/gallery-01-960.webp" srcset="assets/images/gallery/gallery-01-480.webp 480w, assets/images/gallery/gallery-01-960.webp 960w, assets/images/gallery/gallery-01-1280.webp 1280w" sizes="(min-width: 1024px) 50vw, 100vw" width="1280" height="960" alt="Dokumentasi kegiatan CrownCAD Indonesia" loading="lazy" decoding="async">
+            <span class="gallery-hint"><svg class="i" aria-hidden="true"><use href="#i-expand"></use></svg></span>
+          </button>
+        </div>
+
+        <div class="gallery-more">
+          <button class="btn btn-outline" id="galleryAll" type="button">
+            Lihat seluruh foto
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNER -->
+    <section class="sect partner" id="partner">
+      <div class="wrap partner-grid">
+        <div class="partner-panel">
+          <div class="partner-logos">
+            <img src="assets/images/brand/logo-white.png" alt="CrownCAD" width="455" height="120">
+            <span aria-hidden="true"></span>
+            <img src="assets/images/brand/hetra-white.png" alt="PT Hetra Teknologi Indonesia" width="980" height="361">
+          </div>
+          <p class="partner-tag"><span class="dot" aria-hidden="true"></span> Partner resmi CrownCAD di Indonesia</p>
+          <p class="partner-line">Satu platform cloud, satu titik dukungan.</p>
+          <div class="partner-facts">
+            <div><strong>Cloud CAD</strong><span>Akses browser</span></div>
+            <div><strong>Real-time</strong><span>Kolaborasi</span></div>
+            <div><strong>Dual-kernel</strong><span>DGM + DCS</span></div>
+            <div><strong>Drawing 2D</strong><span>Otomatis</span></div>
+            <div><strong>Version control</strong><span>Terpusat</span></div>
+            <div><strong>Multi-CAD</strong><span>Import &amp; export</span></div>
+          </div>
+          <div class="partner-foot">
+            <p class="mono">Sales / Training / Consulting</p>
+            <p>Bekasi, Jawa Barat — melayani tim desain dan manufaktur di seluruh Indonesia.</p>
+          </div>
+        </div>
+
+        <div class="partner-copy">
+          <p class="kicker"><span class="mono">08</span> Partner</p>
+          <h2>Partner desain digital untuk engineer Indonesia.</h2>
+          <p class="lead">PT Hetra Teknologi Indonesia adalah partner resmi CrownCAD di Indonesia — menghadirkan lisensi, pelatihan, dan konsultasi untuk tim desain, arsitek, serta engineer.</p>
+          <ol class="story-list">
+            <li>
+              <span class="mono">01</span>
+              <div><h3>Berawal dari kebutuhan desain sehari-hari</h3><p>Kami tumbuh dari tim yang memahami workflow arsitek, drafter, dan engineer — bukan sekadar menjual lisensi software.</p></div>
+            </li>
+            <li>
+              <span class="mono">02</span>
+              <div><h3>Hari ini: satu tim, tiga layanan</h3><p>Lisensi, training, dan konsultasi berjalan dalam satu tim — jadi adopsi software tidak berhenti di pembelian.</p></div>
+            </li>
+            <li>
+              <span class="mono">03</span>
+              <div><h3>Melangkah ke cloud bersama CrownCAD</h3><p>Sebagai mitra CrownCAD di Indonesia, kami membawa workflow CAD ke browser: kolaborasi real-time, tanpa instalasi, dengan pendampingan lokal.</p></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="sect sect-light faq" id="faq">
+      <div class="wrap faq-grid">
+        <div class="faq-copy">
+          <p class="kicker"><span class="mono">09</span> FAQ</p>
+          <h2>Pertanyaan yang sering muncul.</h2>
+          <p class="lead">Belum menemukan jawabannya? Tim PT Hetra siap membantu lewat WhatsApp atau email.</p>
+          <a class="btn btn-outline" href="mailto:adam@hetratekno.com">Tanya lewat email <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg></a>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Apakah CrownCAD perlu instalasi?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Tidak. CrownCAD berjalan di browser, jadi tim Anda cukup membuka workspace tanpa memasang aplikasi berat di setiap komputer.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Format CAD apa yang bisa dibaca?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Import IGES, STEP, dan Parasolid. CrownCAD juga membaca model dari CATIA, NX, Creo, SOLIDWORKS, Inventor, Revit, dan AutoCAD, lalu bisa export ke format yang dibutuhkan tim produksi.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Bagaimana keamanan data tim kami?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Data disimpan dan ditransmisikan dengan enkripsi. Akses diatur lewat SSO/SAML dan RBAC granular, dengan audit trail serta backup harian. Platform mengikuti ISO 27001.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Apakah ada trial sebelum membeli?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Ada. Trial 30 hari bisa dimulai lewat tim PT Hetra, termasuk pendampingan singkat agar tim Anda mencoba alur kerja yang paling relevan.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Apakah tim kami bisa dilatih?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Bisa. Tersedia sesi training basic sampai advanced dengan materi berbahasa Indonesia, plus sertifikasi untuk memastikan tim siap produksi.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Apakah tersedia lisensi untuk kampus atau laboratorium?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Tersedia lisensi lab dan kelas untuk institusi pendidikan yang ingin mengajar CAD tanpa instalasi di setiap komputer.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section class="sect sect-light contact" id="kontak">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div class="contact-copy">
+            <p class="kicker"><span class="mono">10</span> Kontak</p>
+            <h2>Mari bicara soal proses desain Anda.</h2>
+            <p class="lead">Tim PT Hetra Teknologi Indonesia siap membantu memilih lisensi, menjadwalkan training, atau mendampingi implementasi di tim Anda.</p>
+
+            <dl class="contact-details">
+              <div>
+                <dt><svg class="i" aria-hidden="true"><use href="#i-pin"></use></svg>Kantor</dt>
+                <dd>Plaza Summarecon Bekasi, Lantai 6<br>Jl. Bulevar Ahmad Yani, Bekasi 17143</dd>
+              </div>
+              <div>
+                <dt><svg class="i" aria-hidden="true"><use href="#i-phone"></use></svg>Telepon &amp; WhatsApp</dt>
+                <dd><a href="tel:+622138317110">021-3831-7110</a><span class="sep" aria-hidden="true">/</span><a href="https://wa.me/6283815512745" target="_blank" rel="noopener">0838-1551-2745</a></dd>
+              </div>
+              <div>
+                <dt><svg class="i" aria-hidden="true"><use href="#i-mail"></use></svg>Email</dt>
+                <dd><a href="mailto:adam@hetratekno.com">adam@hetratekno.com</a></dd>
+              </div>
+              <div>
+                <dt><svg class="i" aria-hidden="true"><use href="#i-clock"></use></svg>Jam kerja</dt>
+                <dd>Senin–Jumat, 09.00–17.00 WIB</dd>
+              </div>
+            </dl>
+
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="https://wa.me/6283815512745?text=Halo%20PT%20Hetra%2C%20saya%20ingin%20konsultasi%20CrownCAD." target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-wa"></use></svg>Chat WhatsApp</a>
+              <a class="btn btn-outline" href="mailto:adam@hetratekno.com">Kirim email</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>Minta penawaran</h3>
+            <p>Isi kebutuhan tim Anda. Formulir ini membuka WhatsApp dengan pesan yang sudah terisi.</p>
+            <form id="leadForm" novalidate>
+              <div class="field">
+                <label for="fName">Nama</label>
+                <input id="fName" name="name" type="text" autocomplete="name" required placeholder="Nama lengkap">
+              </div>
+              <div class="field">
+                <label for="fCompany">Perusahaan</label>
+                <input id="fCompany" name="company" type="text" autocomplete="organization" required placeholder="Nama perusahaan">
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="fEmail">Email</label>
+                  <input id="fEmail" name="email" type="email" autocomplete="email" required placeholder="nama@perusahaan.com">
+                </div>
+                <div class="field">
+                  <label for="fPhone">WhatsApp</label>
+                  <input id="fPhone" name="phone" type="tel" autocomplete="tel" required placeholder="08xx-xxxx-xxxx">
+                </div>
+              </div>
+              <div class="field">
+                <label for="fNeed">Kebutuhan</label>
+                <select id="fNeed" name="need">
+                  <option>Lisensi &amp; harga</option>
+                  <option>Demo produk</option>
+                  <option>Training tim</option>
+                  <option>Implementasi &amp; migrasi</option>
+                  <option>Lisensi pendidikan</option>
+                  <option>Lainnya</option>
+                </select>
+              </div>
+              <p class="form-error" id="formError" role="alert" hidden>Lengkapi nama, perusahaan, email, dan WhatsApp terlebih dahulu.</p>
+              <button class="btn btn-primary btn-block" type="submit">Kirim lewat WhatsApp <svg class="i" aria-hidden="true"><use href="#i-arrow-right"></use></svg></button>
+              <p class="form-note">Data hanya dipakai untuk merespons permintaan Anda.</p>
+            </form>
+          </div>
+        </div>
+
+        <div class="map">
+          <div class="map-head">
+            <p class="mono">Lokasi kantor / Bekasi</p>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=PT+Hetra+Teknologi+Indonesia+Plaza+Summarecon+Bekasi" target="_blank" rel="noopener">Buka di Google Maps <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg></a>
+          </div>
+          <div class="map-frame">
+            <iframe src="https://maps.google.com/maps?q=PT%20Hetra%20Teknologi%20Indonesia%20Plaza%20Summarecon%20Bekasi&amp;t=m&amp;z=16&amp;output=embed&amp;iwloc=near" title="Peta lokasi PT Hetra Teknologi Indonesia di Plaza Summarecon Bekasi" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <button class="map-cover" id="mapCover" type="button">Klik untuk menjelajah peta</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logos">
+          <img src="assets/images/brand/logo-white.png" alt="CrownCAD" width="455" height="120">
+          <span aria-hidden="true"></span>
+          <img src="assets/images/brand/hetra-white.png" alt="PT Hetra Teknologi Indonesia" width="980" height="361">
+        </div>
+        <p>Platform CAD 3D cloud-native dengan kolaborasi real-time, dual-kernel, dan kontrol versi terpusat. Didistribusikan dan didampingi PT Hetra Teknologi Indonesia.</p>
+        <address>
+          Plaza Summarecon Bekasi, Lantai 6<br>
+          Jl. Bulevar Ahmad Yani, Bekasi 17143<br>
+          <a href="tel:+622138317110">021-3831-7110</a> · <a href="mailto:adam@hetratekno.com">adam@hetratekno.com</a>
+        </address>
+      </div>
+
+      <div class="footer-col">
+        <h4>Produk</h4>
+        <ul>
+          <li><a href="#modul">Modul Inti</a></li>
+          <li><a href="#modul">Modul Profesional</a></li>
+          <li><a href="#modul">Kolaborasi</a></li>
+          <li><a href="#platform">Platform cloud</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <ul>
+          <li><a href="#layanan">After sales</a></li>
+          <li><a href="#trainer">Training</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Perusahaan</h4>
+        <ul>
+          <li><a href="#partner">Tentang PT Hetra</a></li>
+          <li><a href="https://hetratekno.com/" target="_blank" rel="noopener">hetratekno.com</a></li>
+          <li><a href="https://hetratekno.com/creo/" target="_blank" rel="noopener">PTC Creo</a></li>
+          <li><a href="https://hetratekno.com/zw3d/" target="_blank" rel="noopener">ZW3D</a></li>
+          <li><a href="https://hetratekno.com/zwcad/" target="_blank" rel="noopener">ZWCAD</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>&copy; <span id="year">2026</span> CrownCAD Indonesia · PT Hetra Teknologi Indonesia. Seluruh hak cipta dilindungi.</p>
+      <p>CrownCAD adalah merek dagang pemiliknya. PT Hetra Teknologi Indonesia adalah partner resmi di Indonesia.</p>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/6283815512745?text=Halo%20PT%20Hetra%2C%20saya%20ingin%20informasi%20CrownCAD." target="_blank" rel="noopener" aria-label="Chat WhatsApp dengan PT Hetra">
+    <span class="wa-icon"><svg class="i" aria-hidden="true"><use href="#i-wa"></use></svg></span>
+    <span class="wa-text">Chat dengan kami</span>
+  </a>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Kembali ke atas halaman">
+    <svg class="i" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+
+  <div class="gallery-chamber" id="galleryChamber" role="dialog" aria-modal="true" aria-label="Seluruh foto galeri" hidden>
+    <div class="chamber-inner">
+      <div class="chamber-head">
+        <p class="mono">Galeri <span id="chamberCount">12</span> foto</p>
+        <button class="chamber-close" id="chamberClose" type="button" aria-label="Tutup galeri"><svg class="i" aria-hidden="true"><use href="#i-x"></use></svg></button>
+      </div>
+      <div class="chamber-grid" id="chamberGrid"></div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galeri foto" hidden>
+    <button class="lb-close" type="button" id="lbClose" aria-label="Tutup galeri"><svg class="i" aria-hidden="true"><use href="#i-x"></use></svg></button>
+    <button class="lb-nav lb-prev" type="button" id="lbPrev" aria-label="Foto sebelumnya"><svg class="i" aria-hidden="true"><use href="#i-caret-left"></use></svg></button>
+    <figure>
+      <img id="lbImage" alt="">
+      <figcaption id="lbCount" class="mono"></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" type="button" id="lbNext" aria-label="Foto berikutnya"><svg class="i" aria-hidden="true"><use href="#i-caret-right"></use></svg></button>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
